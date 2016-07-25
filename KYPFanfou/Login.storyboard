@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EBN-mg-fsh">
+            <objects>
+                <viewController id="dCR-N3-5Uj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8dc-dW-nXz"/>
+                        <viewControllerLayoutGuide type="bottom" id="m8y-Na-2M1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j2J-Y8-ahm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hcc-Oo-ATl">
+                                <rect key="frame" x="20" y="84" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SEk-NN-4wx">
+                                <rect key="frame" x="20" y="134" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SEk-NN-4wx" firstAttribute="leading" secondItem="Hcc-Oo-ATl" secondAttribute="leading" id="E0z-zO-eML"/>
+                            <constraint firstItem="Hcc-Oo-ATl" firstAttribute="top" secondItem="8dc-dW-nXz" secondAttribute="bottom" constant="20" id="NJK-Qo-c6U"/>
+                            <constraint firstItem="SEk-NN-4wx" firstAttribute="top" secondItem="Hcc-Oo-ATl" secondAttribute="bottom" constant="20" id="Odw-wh-ENl"/>
+                            <constraint firstItem="SEk-NN-4wx" firstAttribute="trailing" secondItem="Hcc-Oo-ATl" secondAttribute="trailing" id="Wsu-U9-S00"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hcc-Oo-ATl" secondAttribute="trailing" id="fHW-W9-gNN"/>
+                            <constraint firstItem="Hcc-Oo-ATl" firstAttribute="leading" secondItem="j2J-Y8-ahm" secondAttribute="leadingMargin" id="xPp-bK-Vhu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sqe-6q-wVU">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="LCJ-jC-Kf6"/>
+                        <barButtonItem key="rightBarButtonItem" title="登录" id="eNE-4I-9yi"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbG-2x-eo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063" y="306"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i1F-c8-1XJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xpd-P6-FgS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5KE-tT-PmH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dCR-N3-5Uj" kind="relationship" relationship="rootViewController" id="LRs-bt-MRK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xdp-Lc-vE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421" y="306"/>
+        </scene>
+    </scenes>
+</document>

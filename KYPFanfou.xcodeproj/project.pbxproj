@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A969C6C11D45E7B900ABBCF2 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A969C6C01D45E7B900ABBCF2 /* Splash.storyboard */; };
+		A969C6C41D45F20D00ABBCF2 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6C31D45F20D00ABBCF2 /* SplashViewController.m */; };
+		A969C6C81D45F9EF00ABBCF2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6C71D45F9EF00ABBCF2 /* LoginViewController.m */; };
 		A9FF58051D45D669003006DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF58041D45D669003006DE /* main.m */; };
 		A9FF58081D45D669003006DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF58071D45D669003006DE /* AppDelegate.m */; };
 		A9FF580B1D45D669003006DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF580A1D45D669003006DE /* ViewController.m */; };
@@ -24,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		A969C6C01D45E7B900ABBCF2 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		A969C6C21D45F20D00ABBCF2 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		A969C6C31D45F20D00ABBCF2 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		A969C6C61D45F9EF00ABBCF2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A969C6C71D45F9EF00ABBCF2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A9FF58001D45D669003006DE /* KYPFanfou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYPFanfou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FF58041D45D669003006DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9FF58061D45D669003006DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A969C6C51D45F21700ABBCF2 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A969C6C01D45E7B900ABBCF2 /* Splash.storyboard */,
+				A969C6C21D45F20D00ABBCF2 /* SplashViewController.h */,
+				A969C6C31D45F20D00ABBCF2 /* SplashViewController.m */,
+			);
+			name = Splash;
+			sourceTree = "<group>";
+		};
 		A9FF57F71D45D669003006DE = {
 			isa = PBXGroup;
 			children = (
@@ -72,7 +88,7 @@
 		A9FF58021D45D669003006DE /* KYPFanfou */ = {
 			isa = PBXGroup;
 			children = (
-				A969C6C01D45E7B900ABBCF2 /* Splash.storyboard */,
+				A969C6C51D45F21700ABBCF2 /* Splash */,
 				A9FF581C1D45D6E5003006DE /* Login */,
 				A9FF58061D45D669003006DE /* AppDelegate.h */,
 				A9FF58071D45D669003006DE /* AppDelegate.m */,
@@ -100,6 +116,8 @@
 			children = (
 				A9FF581A1D45D69B003006DE /* Login.storyboard */,
 				A9FF581D1D45D844003006DE /* Accounts.storyboard */,
+				A969C6C61D45F9EF00ABBCF2 /* LoginViewController.h */,
+				A969C6C71D45F9EF00ABBCF2 /* LoginViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -196,6 +214,8 @@
 				A9FF580B1D45D669003006DE /* ViewController.m in Sources */,
 				A9FF58081D45D669003006DE /* AppDelegate.m in Sources */,
 				A9FF58051D45D669003006DE /* main.m in Sources */,
+				A969C6C41D45F20D00ABBCF2 /* SplashViewController.m in Sources */,
+				A969C6C81D45F9EF00ABBCF2 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

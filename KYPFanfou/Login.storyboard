@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xpd-P6-FgS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="EBN-mg-fsh">
             <objects>
-                <viewController id="dCR-N3-5Uj" sceneMemberID="viewController">
+                <viewController id="dCR-N3-5Uj" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8dc-dW-nXz"/>
                         <viewControllerLayoutGuide type="bottom" id="m8y-Na-2M1"/>
@@ -41,7 +41,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="Sqe-6q-wVU">
                         <barButtonItem key="leftBarButtonItem" title="取消" id="LCJ-jC-Kf6"/>
-                        <barButtonItem key="rightBarButtonItem" title="登录" id="eNE-4I-9yi"/>
+                        <barButtonItem key="rightBarButtonItem" title="登录" id="eNE-4I-9yi">
+                            <connections>
+                                <action selector="login:" destination="dCR-N3-5Uj" id="JA9-9R-5UI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbG-2x-eo9" userLabel="First Responder" sceneMemberID="firstResponder"/>

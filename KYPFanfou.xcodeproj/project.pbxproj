@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66B4E6CE9541415F8AD4F29E /* libPods-KYPFanfou.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F40243F569047864317FE8EC /* libPods-KYPFanfou.a */; };
 		A969C6C11D45E7B900ABBCF2 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A969C6C01D45E7B900ABBCF2 /* Splash.storyboard */; };
 		A969C6C41D45F20D00ABBCF2 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6C31D45F20D00ABBCF2 /* SplashViewController.m */; };
 		A969C6C81D45F9EF00ABBCF2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6C71D45F9EF00ABBCF2 /* LoginViewController.m */; };
+		A969C6CA1D46036D00ABBCF2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A969C6C91D46036D00ABBCF2 /* Podfile */; };
+		A969C6CD1D473D0E00ABBCF2 /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6CC1D473D0E00ABBCF2 /* UserTableViewCell.m */; };
+		A969C6D01D4743AD00ABBCF2 /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6CF1D4743AD00ABBCF2 /* AccountsTableViewController.m */; };
+		A969C6D41D47455D00ABBCF2 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6D31D47455D00ABBCF2 /* CoreDataStack.m */; };
+		A969C6D71D4748D200ABBCF2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A969C6D51D4748D200ABBCF2 /* Model.xcdatamodeld */; };
+		A969C6DC1D47558900ABBCF2 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6D91D47558900ABBCF2 /* User+CoreDataProperties.m */; };
+		A969C6DD1D47558900ABBCF2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6DB1D47558900ABBCF2 /* User.m */; };
+		A969C6E11D4755FE00ABBCF2 /* CoreDataStack+User.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6E01D4755FE00ABBCF2 /* CoreDataStack+User.m */; };
 		A9FF58051D45D669003006DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF58041D45D669003006DE /* main.m */; };
 		A9FF58081D45D669003006DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF58071D45D669003006DE /* AppDelegate.m */; };
 		A9FF580B1D45D669003006DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF580A1D45D669003006DE /* ViewController.m */; };
@@ -25,11 +34,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2762DEADBF811808F5A2299F /* Pods-KYPFanfou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYPFanfou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KYPFanfou/Pods-KYPFanfou.debug.xcconfig"; sourceTree = "<group>"; };
 		A969C6C01D45E7B900ABBCF2 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		A969C6C21D45F20D00ABBCF2 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		A969C6C31D45F20D00ABBCF2 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		A969C6C61D45F9EF00ABBCF2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A969C6C71D45F9EF00ABBCF2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A969C6C91D46036D00ABBCF2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		A969C6CB1D473D0E00ABBCF2 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
+		A969C6CC1D473D0E00ABBCF2 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
+		A969C6CE1D4743AD00ABBCF2 /* AccountsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsTableViewController.h; sourceTree = "<group>"; };
+		A969C6CF1D4743AD00ABBCF2 /* AccountsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsTableViewController.m; sourceTree = "<group>"; };
+		A969C6D21D47455D00ABBCF2 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		A969C6D31D47455D00ABBCF2 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		A969C6D61D4748D200ABBCF2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A969C6D81D47558900ABBCF2 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A969C6D91D47558900ABBCF2 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A969C6DA1D47558900ABBCF2 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		A969C6DB1D47558900ABBCF2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		A969C6DF1D4755FE00ABBCF2 /* CoreDataStack+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreDataStack+User.h"; sourceTree = "<group>"; };
+		A969C6E01D4755FE00ABBCF2 /* CoreDataStack+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CoreDataStack+User.m"; sourceTree = "<group>"; };
 		A9FF58001D45D669003006DE /* KYPFanfou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYPFanfou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FF58041D45D669003006DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9FF58061D45D669003006DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -46,6 +70,8 @@
 		A9FF58221D45E1F6003006DE /* MentionMe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MentionMe.storyboard; sourceTree = "<group>"; };
 		A9FF58241D45E487003006DE /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		A9FF58261D45E500003006DE /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		D101AAA4BA339E5C8D412E58 /* Pods-KYPFanfou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYPFanfou.release.xcconfig"; path = "Pods/Target Support Files/Pods-KYPFanfou/Pods-KYPFanfou.release.xcconfig"; sourceTree = "<group>"; };
+		F40243F569047864317FE8EC /* libPods-KYPFanfou.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KYPFanfou.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +79,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66B4E6CE9541415F8AD4F29E /* libPods-KYPFanfou.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13768CD61E5381311EA34FBC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2762DEADBF811808F5A2299F /* Pods-KYPFanfou.debug.xcconfig */,
+				D101AAA4BA339E5C8D412E58 /* Pods-KYPFanfou.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7F4D8AD0558CEC6A2C4F296F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F40243F569047864317FE8EC /* libPods-KYPFanfou.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A969C6C51D45F21700ABBCF2 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,11 +113,38 @@
 			name = Splash;
 			sourceTree = "<group>";
 		};
+		A969C6D11D47451E00ABBCF2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A969C6DE1D47559000ABBCF2 /* Model */,
+				A969C6D21D47455D00ABBCF2 /* CoreDataStack.h */,
+				A969C6D31D47455D00ABBCF2 /* CoreDataStack.m */,
+				A969C6DF1D4755FE00ABBCF2 /* CoreDataStack+User.h */,
+				A969C6E01D4755FE00ABBCF2 /* CoreDataStack+User.m */,
+				A969C6D51D4748D200ABBCF2 /* Model.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		A969C6DE1D47559000ABBCF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A969C6D81D47558900ABBCF2 /* User+CoreDataProperties.h */,
+				A969C6D91D47558900ABBCF2 /* User+CoreDataProperties.m */,
+				A969C6DA1D47558900ABBCF2 /* User.h */,
+				A969C6DB1D47558900ABBCF2 /* User.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		A9FF57F71D45D669003006DE = {
 			isa = PBXGroup;
 			children = (
+				A969C6C91D46036D00ABBCF2 /* Podfile */,
 				A9FF58021D45D669003006DE /* KYPFanfou */,
 				A9FF58011D45D669003006DE /* Products */,
+				13768CD61E5381311EA34FBC /* Pods */,
+				7F4D8AD0558CEC6A2C4F296F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +159,7 @@
 		A9FF58021D45D669003006DE /* KYPFanfou */ = {
 			isa = PBXGroup;
 			children = (
+				A969C6D11D47451E00ABBCF2 /* CoreData */,
 				A969C6C51D45F21700ABBCF2 /* Splash */,
 				A9FF581C1D45D6E5003006DE /* Login */,
 				A9FF58061D45D669003006DE /* AppDelegate.h */,
@@ -116,6 +188,10 @@
 			children = (
 				A9FF581A1D45D69B003006DE /* Login.storyboard */,
 				A9FF581D1D45D844003006DE /* Accounts.storyboard */,
+				A969C6CE1D4743AD00ABBCF2 /* AccountsTableViewController.h */,
+				A969C6CF1D4743AD00ABBCF2 /* AccountsTableViewController.m */,
+				A969C6CB1D473D0E00ABBCF2 /* UserTableViewCell.h */,
+				A969C6CC1D473D0E00ABBCF2 /* UserTableViewCell.m */,
 				A969C6C61D45F9EF00ABBCF2 /* LoginViewController.h */,
 				A969C6C71D45F9EF00ABBCF2 /* LoginViewController.m */,
 			);
@@ -141,9 +217,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9FF58171D45D669003006DE /* Build configuration list for PBXNativeTarget "KYPFanfou" */;
 			buildPhases = (
+				2E118C7C42239E8DBD6B84BE /* Check Pods Manifest.lock */,
 				A9FF57FC1D45D669003006DE /* Sources */,
 				A9FF57FD1D45D669003006DE /* Frameworks */,
 				A9FF57FE1D45D669003006DE /* Resources */,
+				D3C3A4607664EEDAD0CF9ABC /* Embed Pods Frameworks */,
+				FAB1B98813DBA6426EAB7920 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,20 +280,76 @@
 				A9FF58101D45D669003006DE /* Assets.xcassets in Resources */,
 				A9FF58251D45E487003006DE /* Message.storyboard in Resources */,
 				A9FF580E1D45D669003006DE /* Main.storyboard in Resources */,
+				A969C6CA1D46036D00ABBCF2 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E118C7C42239E8DBD6B84BE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D3C3A4607664EEDAD0CF9ABC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KYPFanfou/Pods-KYPFanfou-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAB1B98813DBA6426EAB7920 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KYPFanfou/Pods-KYPFanfou-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9FF57FC1D45D669003006DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A969C6DC1D47558900ABBCF2 /* User+CoreDataProperties.m in Sources */,
 				A9FF580B1D45D669003006DE /* ViewController.m in Sources */,
+				A969C6E11D4755FE00ABBCF2 /* CoreDataStack+User.m in Sources */,
 				A9FF58081D45D669003006DE /* AppDelegate.m in Sources */,
+				A969C6CD1D473D0E00ABBCF2 /* UserTableViewCell.m in Sources */,
+				A969C6D41D47455D00ABBCF2 /* CoreDataStack.m in Sources */,
 				A9FF58051D45D669003006DE /* main.m in Sources */,
+				A969C6DD1D47558900ABBCF2 /* User.m in Sources */,
+				A969C6D71D4748D200ABBCF2 /* Model.xcdatamodeld in Sources */,
 				A969C6C41D45F20D00ABBCF2 /* SplashViewController.m in Sources */,
+				A969C6D01D4743AD00ABBCF2 /* AccountsTableViewController.m in Sources */,
 				A969C6C81D45F9EF00ABBCF2 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +462,7 @@
 		};
 		A9FF58181D45D669003006DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2762DEADBF811808F5A2299F /* Pods-KYPFanfou.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KYPFanfou/Info.plist;
@@ -338,6 +474,7 @@
 		};
 		A9FF58191D45D669003006DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D101AAA4BA339E5C8D412E58 /* Pods-KYPFanfou.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KYPFanfou/Info.plist;
@@ -369,6 +506,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A969C6D51D4748D200ABBCF2 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A969C6D61D4748D200ABBCF2 /* Model.xcdatamodel */,
+			);
+			currentVersion = A969C6D61D4748D200ABBCF2 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A9FF57F81D45D669003006DE /* Project object */;
 }

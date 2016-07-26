@@ -18,16 +18,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    NSLog(@"1");
+
     dispatch_async(dispatch_get_main_queue(), ^{
+
+    NSLog(@"2");
+
         BOOL isUserExist = NO;
         if (isUserExist) {
             [self performSegueWithIdentifier:@"MainSegue" sender:nil];
         } else {
             [self performSegueWithIdentifier:@"LoginSegue" sender:nil];
         }
-
+        
     });
-
+    NSLog(@"3");
 }
 
 - (void)didReceiveMemoryWarning {

@@ -43,14 +43,25 @@
                         <barButtonItem key="leftBarButtonItem" title="取消" id="LCJ-jC-Kf6"/>
                         <barButtonItem key="rightBarButtonItem" title="登录" id="eNE-4I-9yi">
                             <connections>
-                                <action selector="login:" destination="dCR-N3-5Uj" id="JA9-9R-5UI"/>
+                                <action selector="login:" destination="dCR-N3-5Uj" id="ZCP-O1-y7D"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="PeU-Fd-rqW" kind="presentation" identifier="ShowAccountsSegue" id="qWk-eF-UMm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbG-2x-eo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063" y="306"/>
+            <point key="canvasLocation" x="1040" y="306"/>
+        </scene>
+        <!--Accounts-->
+        <scene sceneID="ULE-M2-2TB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Accounts" id="PeU-Fd-rqW" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GdN-dl-fMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1547.5" y="306"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i1F-c8-1XJ">

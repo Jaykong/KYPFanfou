@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import "Service.h"
 @interface LoginViewController ()
 
 @end
@@ -17,11 +17,13 @@
 - (IBAction)login:(UIBarButtonItem *)sender {
     
     // login sucess
-    [self performSegueWithIdentifier:@"ShowAccountsSegue" sender:nil];
-    
-    // login fail
+    [[Service sharedInstance] authoriseWithUserName:@"kongyunpeng2011@sina.com" password:@"1234" success:^(NSString *token, NSString *tokenSecret) {
+        [[Service sharedInstance] requestVerifyCredential:nil accessToken:token tokenSecret:tokenSecret requestMethod:@"GET" sucess:^(NSDictionary *result) {
+            [self performSegueWithIdentifier:@"ShowAccountsSegue" sender:nil];
+        }];
+    }];
 
-    
+    // login fail
 }
 
 - (void)viewDidLoad {

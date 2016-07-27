@@ -19,6 +19,9 @@
 		A969C6DC1D47558900ABBCF2 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6D91D47558900ABBCF2 /* User+CoreDataProperties.m */; };
 		A969C6DD1D47558900ABBCF2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6DB1D47558900ABBCF2 /* User.m */; };
 		A969C6E11D4755FE00ABBCF2 /* CoreDataStack+User.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6E01D4755FE00ABBCF2 /* CoreDataStack+User.m */; };
+		A9ECFC0D1D487AC50009C71E /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ECFC0C1D487AC50009C71E /* Service.m */; };
+		A9ECFC101D487DE00009C71E /* APIContant.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ECFC0F1D487DE00009C71E /* APIContant.m */; };
+		A9ECFC131D489E9F0009C71E /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ECFC121D489E9F0009C71E /* CoreDataTableViewController.m */; };
 		A9FF58051D45D669003006DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF58041D45D669003006DE /* main.m */; };
 		A9FF58081D45D669003006DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF58071D45D669003006DE /* AppDelegate.m */; };
 		A9FF580B1D45D669003006DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF580A1D45D669003006DE /* ViewController.m */; };
@@ -54,6 +57,12 @@
 		A969C6DB1D47558900ABBCF2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		A969C6DF1D4755FE00ABBCF2 /* CoreDataStack+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreDataStack+User.h"; sourceTree = "<group>"; };
 		A969C6E01D4755FE00ABBCF2 /* CoreDataStack+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CoreDataStack+User.m"; sourceTree = "<group>"; };
+		A9ECFC0B1D487AC50009C71E /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
+		A9ECFC0C1D487AC50009C71E /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		A9ECFC0E1D487DE00009C71E /* APIContant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIContant.h; sourceTree = "<group>"; };
+		A9ECFC0F1D487DE00009C71E /* APIContant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIContant.m; sourceTree = "<group>"; };
+		A9ECFC111D489E9F0009C71E /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		A9ECFC121D489E9F0009C71E /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		A9FF58001D45D669003006DE /* KYPFanfou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYPFanfou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FF58041D45D669003006DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9FF58061D45D669003006DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,6 +130,7 @@
 				A969C6D31D47455D00ABBCF2 /* CoreDataStack.m */,
 				A969C6DF1D4755FE00ABBCF2 /* CoreDataStack+User.h */,
 				A969C6E01D4755FE00ABBCF2 /* CoreDataStack+User.m */,
+				A9ECFC141D489EAB0009C71E /* Generic TVControllers */,
 				A969C6D51D4748D200ABBCF2 /* Model.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -135,6 +145,26 @@
 				A969C6DB1D47558900ABBCF2 /* User.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A9ECFC0A1D487AAF0009C71E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A9ECFC0E1D487DE00009C71E /* APIContant.h */,
+				A9ECFC0F1D487DE00009C71E /* APIContant.m */,
+				A9ECFC0B1D487AC50009C71E /* Service.h */,
+				A9ECFC0C1D487AC50009C71E /* Service.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		A9ECFC141D489EAB0009C71E /* Generic TVControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9ECFC111D489E9F0009C71E /* CoreDataTableViewController.h */,
+				A9ECFC121D489E9F0009C71E /* CoreDataTableViewController.m */,
+			);
+			name = "Generic TVControllers";
 			sourceTree = "<group>";
 		};
 		A9FF57F71D45D669003006DE = {
@@ -159,6 +189,7 @@
 		A9FF58021D45D669003006DE /* KYPFanfou */ = {
 			isa = PBXGroup;
 			children = (
+				A9ECFC0A1D487AAF0009C71E /* Service */,
 				A969C6D11D47451E00ABBCF2 /* CoreData */,
 				A969C6C51D45F21700ABBCF2 /* Splash */,
 				A9FF581C1D45D6E5003006DE /* Login */,
@@ -342,6 +373,7 @@
 				A969C6DC1D47558900ABBCF2 /* User+CoreDataProperties.m in Sources */,
 				A9FF580B1D45D669003006DE /* ViewController.m in Sources */,
 				A969C6E11D4755FE00ABBCF2 /* CoreDataStack+User.m in Sources */,
+				A9ECFC0D1D487AC50009C71E /* Service.m in Sources */,
 				A9FF58081D45D669003006DE /* AppDelegate.m in Sources */,
 				A969C6CD1D473D0E00ABBCF2 /* UserTableViewCell.m in Sources */,
 				A969C6D41D47455D00ABBCF2 /* CoreDataStack.m in Sources */,
@@ -350,7 +382,9 @@
 				A969C6D71D4748D200ABBCF2 /* Model.xcdatamodeld in Sources */,
 				A969C6C41D45F20D00ABBCF2 /* SplashViewController.m in Sources */,
 				A969C6D01D4743AD00ABBCF2 /* AccountsTableViewController.m in Sources */,
+				A9ECFC101D487DE00009C71E /* APIContant.m in Sources */,
 				A969C6C81D45F9EF00ABBCF2 /* LoginViewController.m in Sources */,
+				A9ECFC131D489E9F0009C71E /* CoreDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

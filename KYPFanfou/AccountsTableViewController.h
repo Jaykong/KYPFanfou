@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface AccountsTableViewController : UITableViewController
+#import "CoreDataTableViewController.h"
+@interface AccountsTableViewController : CoreDataTableViewController
 
 @end

@@ -48,7 +48,7 @@
     NSArray *urls = [fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
     return urls[0];
 }
-
+//get method self.coordinator
 -(NSPersistentStoreCoordinator *)coordinator {
     if (_coordinator) {
         return _coordinator;
@@ -70,6 +70,7 @@
         return _context;
     }
     _context =  [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    _context.persistentStoreCoordinator = self.coordinator;
     return _context;
 }
 

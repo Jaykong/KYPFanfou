@@ -16,12 +16,16 @@
 		A969C6D01D4743AD00ABBCF2 /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6CF1D4743AD00ABBCF2 /* AccountsTableViewController.m */; };
 		A969C6D41D47455D00ABBCF2 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6D31D47455D00ABBCF2 /* CoreDataStack.m */; };
 		A969C6D71D4748D200ABBCF2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A969C6D51D4748D200ABBCF2 /* Model.xcdatamodeld */; };
-		A969C6DC1D47558900ABBCF2 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6D91D47558900ABBCF2 /* User+CoreDataProperties.m */; };
 		A969C6DD1D47558900ABBCF2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6DB1D47558900ABBCF2 /* User.m */; };
 		A969C6E11D4755FE00ABBCF2 /* CoreDataStack+User.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6E01D4755FE00ABBCF2 /* CoreDataStack+User.m */; };
 		A9ECFC0D1D487AC50009C71E /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ECFC0C1D487AC50009C71E /* Service.m */; };
 		A9ECFC101D487DE00009C71E /* APIContant.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ECFC0F1D487DE00009C71E /* APIContant.m */; };
 		A9ECFC131D489E9F0009C71E /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ECFC121D489E9F0009C71E /* CoreDataTableViewController.m */; };
+		A9ECFC2F1D49ED970009C71E /* TimelineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ECFC2D1D49ED970009C71E /* TimelineCell.m */; };
+		A9ECFC301D49ED970009C71E /* TimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9ECFC2E1D49ED970009C71E /* TimelineCell.xib */; };
+		A9ECFC351D49F7840009C71E /* Status+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ECFC321D49F7840009C71E /* Status+CoreDataProperties.m */; };
+		A9ECFC361D49F7840009C71E /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ECFC341D49F7840009C71E /* Status.m */; };
+		A9ECFC391D49F7EA0009C71E /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ECFC381D49F7EA0009C71E /* User+CoreDataProperties.m */; };
 		A9FF58051D45D669003006DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF58041D45D669003006DE /* main.m */; };
 		A9FF58081D45D669003006DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF58071D45D669003006DE /* AppDelegate.m */; };
 		A9FF580B1D45D669003006DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF580A1D45D669003006DE /* ViewController.m */; };
@@ -43,7 +47,7 @@
 		A969C6C31D45F20D00ABBCF2 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		A969C6C61D45F9EF00ABBCF2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A969C6C71D45F9EF00ABBCF2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		A969C6C91D46036D00ABBCF2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		A969C6C91D46036D00ABBCF2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A969C6CB1D473D0E00ABBCF2 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
 		A969C6CC1D473D0E00ABBCF2 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
 		A969C6CE1D4743AD00ABBCF2 /* AccountsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsTableViewController.h; sourceTree = "<group>"; };
@@ -51,8 +55,6 @@
 		A969C6D21D47455D00ABBCF2 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		A969C6D31D47455D00ABBCF2 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 		A969C6D61D4748D200ABBCF2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		A969C6D81D47558900ABBCF2 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
-		A969C6D91D47558900ABBCF2 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A969C6DA1D47558900ABBCF2 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		A969C6DB1D47558900ABBCF2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		A969C6DF1D4755FE00ABBCF2 /* CoreDataStack+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreDataStack+User.h"; sourceTree = "<group>"; };
@@ -63,6 +65,15 @@
 		A9ECFC0F1D487DE00009C71E /* APIContant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIContant.m; sourceTree = "<group>"; };
 		A9ECFC111D489E9F0009C71E /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		A9ECFC121D489E9F0009C71E /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		A9ECFC2C1D49ED970009C71E /* TimelineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineCell.h; sourceTree = "<group>"; };
+		A9ECFC2D1D49ED970009C71E /* TimelineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineCell.m; sourceTree = "<group>"; };
+		A9ECFC2E1D49ED970009C71E /* TimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineCell.xib; sourceTree = "<group>"; };
+		A9ECFC311D49F7840009C71E /* Status+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Status+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A9ECFC321D49F7840009C71E /* Status+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Status+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A9ECFC331D49F7840009C71E /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		A9ECFC341D49F7840009C71E /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
+		A9ECFC371D49F7EA0009C71E /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A9ECFC381D49F7EA0009C71E /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A9FF58001D45D669003006DE /* KYPFanfou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYPFanfou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FF58041D45D669003006DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9FF58061D45D669003006DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,7 +136,6 @@
 		A969C6D11D47451E00ABBCF2 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				A969C6DE1D47559000ABBCF2 /* Model */,
 				A969C6D21D47455D00ABBCF2 /* CoreDataStack.h */,
 				A969C6D31D47455D00ABBCF2 /* CoreDataStack.m */,
 				A969C6DF1D4755FE00ABBCF2 /* CoreDataStack+User.h */,
@@ -139,8 +149,12 @@
 		A969C6DE1D47559000ABBCF2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A969C6D81D47558900ABBCF2 /* User+CoreDataProperties.h */,
-				A969C6D91D47558900ABBCF2 /* User+CoreDataProperties.m */,
+				A9ECFC311D49F7840009C71E /* Status+CoreDataProperties.h */,
+				A9ECFC321D49F7840009C71E /* Status+CoreDataProperties.m */,
+				A9ECFC371D49F7EA0009C71E /* User+CoreDataProperties.h */,
+				A9ECFC381D49F7EA0009C71E /* User+CoreDataProperties.m */,
+				A9ECFC331D49F7840009C71E /* Status.h */,
+				A9ECFC341D49F7840009C71E /* Status.m */,
 				A969C6DA1D47558900ABBCF2 /* User.h */,
 				A969C6DB1D47558900ABBCF2 /* User.m */,
 			);
@@ -154,6 +168,7 @@
 				A9ECFC0F1D487DE00009C71E /* APIContant.m */,
 				A9ECFC0B1D487AC50009C71E /* Service.h */,
 				A9ECFC0C1D487AC50009C71E /* Service.m */,
+				A969C6DE1D47559000ABBCF2 /* Model */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -165,6 +180,17 @@
 				A9ECFC121D489E9F0009C71E /* CoreDataTableViewController.m */,
 			);
 			name = "Generic TVControllers";
+			sourceTree = "<group>";
+		};
+		A9ECFC2B1D49ED2A0009C71E /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				A9FF581F1D45D91B003006DE /* Timeline.storyboard */,
+				A9ECFC2C1D49ED970009C71E /* TimelineCell.h */,
+				A9ECFC2D1D49ED970009C71E /* TimelineCell.m */,
+				A9ECFC2E1D49ED970009C71E /* TimelineCell.xib */,
+			);
+			name = Timeline;
 			sourceTree = "<group>";
 		};
 		A9FF57F71D45D669003006DE = {
@@ -236,7 +262,7 @@
 				A9FF58221D45E1F6003006DE /* MentionMe.storyboard */,
 				A9FF58261D45E500003006DE /* Me.storyboard */,
 				A9FF58241D45E487003006DE /* Message.storyboard */,
-				A9FF581F1D45D91B003006DE /* Timeline.storyboard */,
+				A9ECFC2B1D49ED2A0009C71E /* Timeline */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -309,6 +335,7 @@
 				A9FF58131D45D669003006DE /* LaunchScreen.storyboard in Resources */,
 				A9FF58271D45E500003006DE /* Me.storyboard in Resources */,
 				A9FF58101D45D669003006DE /* Assets.xcassets in Resources */,
+				A9ECFC301D49ED970009C71E /* TimelineCell.xib in Resources */,
 				A9FF58251D45E487003006DE /* Message.storyboard in Resources */,
 				A9FF580E1D45D669003006DE /* Main.storyboard in Resources */,
 				A969C6CA1D46036D00ABBCF2 /* Podfile in Resources */,
@@ -370,16 +397,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A969C6DC1D47558900ABBCF2 /* User+CoreDataProperties.m in Sources */,
+				A9ECFC2F1D49ED970009C71E /* TimelineCell.m in Sources */,
 				A9FF580B1D45D669003006DE /* ViewController.m in Sources */,
 				A969C6E11D4755FE00ABBCF2 /* CoreDataStack+User.m in Sources */,
 				A9ECFC0D1D487AC50009C71E /* Service.m in Sources */,
 				A9FF58081D45D669003006DE /* AppDelegate.m in Sources */,
 				A969C6CD1D473D0E00ABBCF2 /* UserTableViewCell.m in Sources */,
+				A9ECFC361D49F7840009C71E /* Status.m in Sources */,
 				A969C6D41D47455D00ABBCF2 /* CoreDataStack.m in Sources */,
 				A9FF58051D45D669003006DE /* main.m in Sources */,
 				A969C6DD1D47558900ABBCF2 /* User.m in Sources */,
 				A969C6D71D4748D200ABBCF2 /* Model.xcdatamodeld in Sources */,
+				A9ECFC351D49F7840009C71E /* Status+CoreDataProperties.m in Sources */,
+				A9ECFC391D49F7EA0009C71E /* User+CoreDataProperties.m in Sources */,
 				A969C6C41D45F20D00ABBCF2 /* SplashViewController.m in Sources */,
 				A969C6D01D4743AD00ABBCF2 /* AccountsTableViewController.m in Sources */,
 				A9ECFC101D487DE00009C71E /* APIContant.m in Sources */,

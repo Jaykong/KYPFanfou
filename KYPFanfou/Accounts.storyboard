@@ -65,6 +65,7 @@
                                     <outlet property="iconImageView" destination="taM-kE-Zc1" id="N2c-zD-o92"/>
                                     <outlet property="idLabel" destination="fIi-Bp-2uO" id="SPW-Ub-Bac"/>
                                     <outlet property="nameLabel" destination="2JT-Ml-kEc" id="zBn-bi-UrW"/>
+                                    <segue destination="U0z-4s-tS9" kind="presentation" id="u61-he-wXE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -81,6 +82,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydC-D3-Ky2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="372" y="292"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="BC3-a9-zLP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="U0z-4s-tS9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="veX-Dk-eDO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="817.5" y="292"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KPY-r1-N1x">

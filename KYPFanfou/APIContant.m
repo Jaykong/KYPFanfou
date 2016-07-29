@@ -13,7 +13,7 @@ NSString *const FANFOU_BASE_HOST = @"fanfou.com";
 
 NSString *const FANFOU_API_HOST = @"api.fanfou.com";
 NSString *const API_VERIFY_CREDENTIALS = @"/account/verify_credentials.json";
-
+NSString *const API_HOME_TIMELINE = @"/statuses/home_timeline.json";
 
 
 

@@ -83,4 +83,28 @@
     [task resume];
 }
 
+
+#pragma mark - Base Request 
+
+- (void)requestWithPath:(NSString *)path parameters:(NSDictionary *)parameters accessToken:(NSString *)accessToken tokenSecret:(NSString *)tokenSecret requestMethod:(NSString *)requestMethod sucess:(void (^)(NSDictionary *result))sucess failure:(void (^)(NSError *error))failure {
+    NSURLRequest *request = [TDOAuth URLRequestForPath:path parameters:parameters host:FANFOU_API_HOST consumerKey:CONSUMER_KEY consumerSecret:CONSUMER_SECRET accessToken:accessToken tokenSecret:tokenSecret scheme:@"http" requestMethod:requestMethod dataEncoding:TDOAuthContentTypeUrlEncodedForm headerValues:nil signatureMethod:TDOAuthSignatureMethodHmacSha1];
+    NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            failure(error);
+        } else {
+        NSDictionary *result =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+        sucess(result);
+        }
+    }];
+
+    [task resume];
+}
+#pragma mark - Status
+- (void)requestStatusWithSucess:(void (^)(NSDictionary *result))sucess failure:(void (^)(NSError *error))failure {
+    User *user = [CoreDataStack sharedCoreDataStack].currentUser;
+
+//    [self requestWithPath:API_HOME_TIMELINE parameters:@{@"mode":@"lite"} accessToken:user.token, tokenSecret:user.tokenSecret requestMethod:@"GET" sucess:sucess failure:failure];
+    [self requestWithPath:API_HOME_TIMELINE parameters:nil accessToken:user.token tokenSecret:user.tokenSecret requestMethod:@"GET" sucess:sucess failure:failure];
+}
+
 @end

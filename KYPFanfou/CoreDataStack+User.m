@@ -11,6 +11,18 @@
 NSString *const USER_ENTITY = @"User";
 @implementation CoreDataStack (User)
 
+-(User *)currentUser {
+    NSFetchRequest *fr = [[NSFetchRequest alloc] initWithEntityName:USER_ENTITY];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isActive = %@",@YES];
+    fr.predicate = predicate;
+    NSError *error;
+    NSArray *users = [self.context executeFetchRequest:fr error:&error];
+    if (users.count > 0) {
+        return users[0];
+    }
+    return nil;
+}
+
 -(User *)checkImportedWithUserID:(NSString *)uid {
     NSFetchRequest *fr = [[NSFetchRequest alloc] initWithEntityName:USER_ENTITY];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uid like %@",uid];

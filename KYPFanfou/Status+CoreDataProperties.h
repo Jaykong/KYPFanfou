@@ -2,7 +2,7 @@
 //  Status+CoreDataProperties.h
 //  KYPFanfou
 //
-//  Created by trainer on 7/28/16.
+//  Created by JayKong on 7/29/16.
 //  Copyright © 2016 trainer. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -16,8 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Status (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSDate *created_at;
-@property (nullable, nonatomic, retain) NSString *text;
 @property (nullable, nonatomic, retain) NSString *source;
+@property (nullable, nonatomic, retain) NSString *text;
+@property (nullable, nonatomic, retain) NSString *sid;
 @property (nullable, nonatomic, retain) User *user;
 
 @end

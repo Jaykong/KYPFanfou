@@ -17,13 +17,5 @@
 
     NSURL *url = [NSURL URLWithString:user.iconURL];
     [self.iconImageView sd_setImageWithURL:url placeholderImage:nil options:SDWebImageRefreshCached];
-
-
-
-
-
-
 }
-
-
 @end

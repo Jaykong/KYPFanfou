@@ -43,7 +43,7 @@
 - (void)authoriseWithUserName:(NSString *)userName password:(NSString *)password success:(void (^)(NSString *token,NSString *tokenSecret))sucess  {
     
     NSURLRequest *request = [TDOAuth URLRequestForPath:API_ACCESS_TOKEN
-                                        GETParameters:[NSDictionary dictionaryWithObjectsAndKeys:
+                                         GETParameters:[NSDictionary dictionaryWithObjectsAndKeys:
                                                         userName, @"x_auth_username",
                                                         password, @"x_auth_password",
                                                         @"client_auth", @"x_auth_mode",
@@ -86,24 +86,26 @@
 
 #pragma mark - Base Request 
 
-- (void)requestWithPath:(NSString *)path parameters:(NSDictionary *)parameters accessToken:(NSString *)accessToken tokenSecret:(NSString *)tokenSecret requestMethod:(NSString *)requestMethod sucess:(void (^)(NSDictionary *result))sucess failure:(void (^)(NSError *error))failure {
+- (void)requestWithPath:(NSString *)path parameters:(NSDictionary *)parameters accessToken:(NSString *)accessToken tokenSecret:(NSString *)tokenSecret requestMethod:(NSString *)requestMethod sucess:(void (^)(NSArray *result))sucess failure:(void (^)(NSError *error))failure {
     NSURLRequest *request = [TDOAuth URLRequestForPath:path parameters:parameters host:FANFOU_API_HOST consumerKey:CONSUMER_KEY consumerSecret:CONSUMER_SECRET accessToken:accessToken tokenSecret:tokenSecret scheme:@"http" requestMethod:requestMethod dataEncoding:TDOAuthContentTypeUrlEncodedForm headerValues:nil signatureMethod:TDOAuthSignatureMethodHmacSha1];
     NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             failure(error);
         } else {
-        NSDictionary *result =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-        sucess(result);
+            NSArray *result =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+            NSLog(@"%@",result);
+            sucess(result);
         }
     }];
-
+    
     [task resume];
 }
 #pragma mark - Status
-- (void)requestStatusWithSucess:(void (^)(NSDictionary *result))sucess failure:(void (^)(NSError *error))failure {
+- (void)requestStatusWithSucess:(void (^)(NSArray *result))sucess failure:(void (^)(NSError *error))failure {
     User *user = [CoreDataStack sharedCoreDataStack].currentUser;
-
-//    [self requestWithPath:API_HOME_TIMELINE parameters:@{@"mode":@"lite"} accessToken:user.token, tokenSecret:user.tokenSecret requestMethod:@"GET" sucess:sucess failure:failure];
+//    NSLog(@"%@",user.token);
+//    NSLog(@"%@",user.tokenSecret);
+    //    [self requestWithPath:API_HOME_TIMELINE parameters:@{@"mode":@"lite"} accessToken:user.token, tokenSecret:user.tokenSecret requestMethod:@"GET" sucess:sucess failure:failure];
     [self requestWithPath:API_HOME_TIMELINE parameters:nil accessToken:user.token tokenSecret:user.tokenSecret requestMethod:@"GET" sucess:sucess failure:failure];
 }
 

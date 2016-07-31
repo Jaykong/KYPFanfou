@@ -12,5 +12,6 @@
 
 @property (nonatomic,strong) User *currentUser;
 
--(void)insertOrUpdateWithUserProfile:(NSDictionary *)userProfile token:(NSString *)token tokenSecret:(NSString *)tokenSecret;
+-(User *)insertOrUpdateWithUserProfile:(NSDictionary *)userProfile token:(NSString *)token tokenSecret:(NSString *)tokenSecret;
+-(User *)checkImportedWithUserID:(NSString *)uid;
 @end

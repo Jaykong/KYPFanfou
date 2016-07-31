@@ -20,7 +20,7 @@
     
     self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest: fr managedObjectContext:[CoreDataStack sharedCoreDataStack].context sectionNameKeyPath:nil cacheName:nil];
     
-    
+
     self.frc.delegate = self;
     
 }

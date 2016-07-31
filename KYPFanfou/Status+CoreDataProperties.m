@@ -2,7 +2,7 @@
 //  Status+CoreDataProperties.m
 //  KYPFanfou
 //
-//  Created by trainer on 7/28/16.
+//  Created by JayKong on 7/29/16.
 //  Copyright © 2016 trainer. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,8 +14,9 @@
 @implementation Status (CoreDataProperties)
 
 @dynamic created_at;
-@dynamic text;
 @dynamic source;
+@dynamic text;
+@dynamic sid;
 @dynamic user;
 
 @end

@@ -5,25 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="gLT-i9-CHs">
-            <objects>
-                <viewController id="5TG-IN-sFu" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xpd-SW-6vz"/>
-                        <viewControllerLayoutGuide type="bottom" id="rN3-1O-BvE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZrN-S6-j7N">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Y1V-r0-c6n"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7ro-ty-Law" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1158" y="354"/>
-        </scene>
         <!--时间线-->
         <scene sceneID="9vR-DA-iFs">
             <objects>
@@ -37,12 +18,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="5TG-IN-sFu" kind="relationship" relationship="rootViewController" id="WjM-db-fpf"/>
+                        <segue destination="v2L-e5-ySb" kind="relationship" relationship="rootViewController" id="yF3-mu-pIF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lg3-rP-BcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="528" y="354"/>
+        </scene>
+        <!--Timeline Table View Controller-->
+        <scene sceneID="HcN-4C-Tn8">
+            <objects>
+                <tableViewController id="v2L-e5-ySb" customClass="TimelineTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ebk-1X-9GW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="v2L-e5-ySb" id="HRL-0H-YPP"/>
+                            <outlet property="delegate" destination="v2L-e5-ySb" id="XC5-2Y-RUv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Axx-1j-kMm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DHz-jD-u4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1139" y="354"/>
         </scene>
     </scenes>
 </document>

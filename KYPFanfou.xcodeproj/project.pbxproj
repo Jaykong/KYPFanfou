@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17433C2F1D4AF3A4006B3E4E /* TimelineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17433C2E1D4AF3A4006B3E4E /* TimelineTableViewController.m */; };
+		17433C321D4AF495006B3E4E /* CoreDataStack+Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 17433C311D4AF495006B3E4E /* CoreDataStack+Status.m */; };
 		66B4E6CE9541415F8AD4F29E /* libPods-KYPFanfou.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F40243F569047864317FE8EC /* libPods-KYPFanfou.a */; };
 		A969C6C11D45E7B900ABBCF2 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A969C6C01D45E7B900ABBCF2 /* Splash.storyboard */; };
 		A969C6C41D45F20D00ABBCF2 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6C31D45F20D00ABBCF2 /* SplashViewController.m */; };
@@ -41,6 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17433C2D1D4AF3A4006B3E4E /* TimelineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineTableViewController.h; sourceTree = "<group>"; };
+		17433C2E1D4AF3A4006B3E4E /* TimelineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineTableViewController.m; sourceTree = "<group>"; };
+		17433C301D4AF495006B3E4E /* CoreDataStack+Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreDataStack+Status.h"; sourceTree = "<group>"; };
+		17433C311D4AF495006B3E4E /* CoreDataStack+Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CoreDataStack+Status.m"; sourceTree = "<group>"; };
 		2762DEADBF811808F5A2299F /* Pods-KYPFanfou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYPFanfou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KYPFanfou/Pods-KYPFanfou.debug.xcconfig"; sourceTree = "<group>"; };
 		A969C6C01D45E7B900ABBCF2 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		A969C6C21D45F20D00ABBCF2 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
@@ -140,6 +146,8 @@
 				A969C6D31D47455D00ABBCF2 /* CoreDataStack.m */,
 				A969C6DF1D4755FE00ABBCF2 /* CoreDataStack+User.h */,
 				A969C6E01D4755FE00ABBCF2 /* CoreDataStack+User.m */,
+				17433C301D4AF495006B3E4E /* CoreDataStack+Status.h */,
+				17433C311D4AF495006B3E4E /* CoreDataStack+Status.m */,
 				A9ECFC141D489EAB0009C71E /* Generic TVControllers */,
 				A969C6D51D4748D200ABBCF2 /* Model.xcdatamodeld */,
 			);
@@ -188,6 +196,8 @@
 				A9FF581F1D45D91B003006DE /* Timeline.storyboard */,
 				A9ECFC2C1D49ED970009C71E /* TimelineCell.h */,
 				A9ECFC2D1D49ED970009C71E /* TimelineCell.m */,
+				17433C2D1D4AF3A4006B3E4E /* TimelineTableViewController.h */,
+				17433C2E1D4AF3A4006B3E4E /* TimelineTableViewController.m */,
 				A9ECFC2E1D49ED970009C71E /* TimelineCell.xib */,
 			);
 			name = Timeline;
@@ -406,9 +416,11 @@
 				A9ECFC361D49F7840009C71E /* Status.m in Sources */,
 				A969C6D41D47455D00ABBCF2 /* CoreDataStack.m in Sources */,
 				A9FF58051D45D669003006DE /* main.m in Sources */,
+				17433C321D4AF495006B3E4E /* CoreDataStack+Status.m in Sources */,
 				A969C6DD1D47558900ABBCF2 /* User.m in Sources */,
 				A969C6D71D4748D200ABBCF2 /* Model.xcdatamodeld in Sources */,
 				A9ECFC351D49F7840009C71E /* Status+CoreDataProperties.m in Sources */,
+				17433C2F1D4AF3A4006B3E4E /* TimelineTableViewController.m in Sources */,
 				A9ECFC391D49F7EA0009C71E /* User+CoreDataProperties.m in Sources */,
 				A969C6C41D45F20D00ABBCF2 /* SplashViewController.m in Sources */,
 				A969C6D01D4743AD00ABBCF2 /* AccountsTableViewController.m in Sources */,

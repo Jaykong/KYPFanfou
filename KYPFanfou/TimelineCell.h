@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Status;
 @interface TimelineCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
@@ -16,6 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *contentsLbl;
 
-
+- (void)configureWithStatus:(Status *)status;
 
 @end

@@ -76,7 +76,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="帐号" id="19B-Si-pj4">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="3xN-h5-QJt"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="edit" id="Vux-V6-uK4"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Vux-V6-uK4"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydC-D3-Ky2" userLabel="First Responder" sceneMemberID="firstResponder"/>

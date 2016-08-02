@@ -30,12 +30,18 @@
     [self configureFetch];
     [self performFetch];
 }
-
+#pragma mark - table view data source
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserCell"];
     User *user =  [self.frc objectAtIndexPath:indexPath];
     [cell configureWithUser:user];
     return cell;
+}
+#pragma mark - table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    User *user =  [self.frc objectAtIndexPath:indexPath];
+    user.isActive = @YES;
+  
 }
 
 @end

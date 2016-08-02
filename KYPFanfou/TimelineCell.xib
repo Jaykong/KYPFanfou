@@ -8,11 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineCell" rowHeight="150" id="KGk-i7-Jjw" customClass="TimelineCell">
-            <rect key="frame" x="0.0" y="0.0" width="378" height="150"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineCell" rowHeight="411" id="KGk-i7-Jjw" customClass="TimelineCell">
+            <rect key="frame" x="0.0" y="0.0" width="378" height="411"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="378" height="149"/>
+                <rect key="frame" x="0.0" y="0.0" width="378" height="410"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j1g-uX-q53">
@@ -25,7 +25,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVJ-7w-2XO">
                         <rect key="frame" x="76" y="8" width="294" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pushish time from iphone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2O-mj-qil">
@@ -34,35 +34,66 @@
                         <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdm-R9-I6N">
-                        <rect key="frame" x="8" y="78" width="362" height="63"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZa-pu-0Yh">
+                        <rect key="frame" x="8" y="169" width="200" height="200"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="showLargePhotoImage:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xIM-4b-ykk"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="365" placeholderIntrinsicHeight="260" translatesAutoresizingMaskIntoConstraints="NO" id="rTJ-Yo-Tx7">
+                        <rect key="frame" x="8" y="169" width="200" height="200"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="3WV-JN-z2m"/>
+                            <constraint firstAttribute="height" constant="200" id="7cD-6x-hoc"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="362" placeholderIntrinsicHeight="23" translatesAutoresizingMaskIntoConstraints="NO" id="xzN-Oi-ycc" customClass="DTAttributedLabel">
+                        <rect key="frame" x="8" y="76" width="362" height="85"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGp-pN-VZi">
+                        <rect key="frame" x="8" y="372" width="362" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="FGG-Ig-IeZ"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="j1g-uX-q53" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="0uu-kB-W5d"/>
-                    <constraint firstItem="Pdm-R9-I6N" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1Qt-YF-dLt"/>
+                    <constraint firstItem="SGp-pN-VZi" firstAttribute="top" secondItem="MZa-pu-0Yh" secondAttribute="bottom" constant="3" id="2wM-Ee-KNY"/>
                     <constraint firstItem="u2O-mj-qil" firstAttribute="bottom" secondItem="j1g-uX-q53" secondAttribute="bottom" id="4PW-tk-X1H"/>
                     <constraint firstItem="YVJ-7w-2XO" firstAttribute="top" secondItem="j1g-uX-q53" secondAttribute="top" id="7P7-7h-3n7"/>
-                    <constraint firstItem="Pdm-R9-I6N" firstAttribute="top" secondItem="u2O-mj-qil" secondAttribute="bottom" constant="10" id="8eu-Jt-1uc"/>
-                    <constraint firstItem="Pdm-R9-I6N" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Frh-cH-7A6"/>
+                    <constraint firstItem="MZa-pu-0Yh" firstAttribute="leading" secondItem="rTJ-Yo-Tx7" secondAttribute="leading" id="C7Z-sw-alS"/>
+                    <constraint firstItem="MZa-pu-0Yh" firstAttribute="bottom" secondItem="rTJ-Yo-Tx7" secondAttribute="bottom" id="DtB-nX-8nr"/>
                     <constraint firstAttribute="trailingMargin" secondItem="YVJ-7w-2XO" secondAttribute="trailing" id="GlP-N0-0h8"/>
+                    <constraint firstItem="rTJ-Yo-Tx7" firstAttribute="top" secondItem="xzN-Oi-ycc" secondAttribute="bottom" constant="8" id="Iee-1W-NNU"/>
+                    <constraint firstItem="xzN-Oi-ycc" firstAttribute="top" secondItem="u2O-mj-qil" secondAttribute="bottom" constant="8" id="Ju0-gA-tlb"/>
+                    <constraint firstItem="SGp-pN-VZi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="K1h-C9-QnH"/>
                     <constraint firstItem="j1g-uX-q53" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="KIO-p1-rfO"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Pdm-R9-I6N" secondAttribute="bottom" id="Qtv-Vk-dwC"/>
+                    <constraint firstItem="MZa-pu-0Yh" firstAttribute="trailing" secondItem="rTJ-Yo-Tx7" secondAttribute="trailing" id="LJK-Hw-sBh"/>
+                    <constraint firstItem="SGp-pN-VZi" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="MD0-3F-UY4"/>
+                    <constraint firstItem="xzN-Oi-ycc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="MhL-Rv-nqN"/>
+                    <constraint firstItem="MZa-pu-0Yh" firstAttribute="top" secondItem="rTJ-Yo-Tx7" secondAttribute="top" id="Zmp-ga-fVO"/>
                     <constraint firstItem="YVJ-7w-2XO" firstAttribute="leading" secondItem="j1g-uX-q53" secondAttribute="trailing" constant="8" id="c4U-qw-p0E"/>
+                    <constraint firstItem="rTJ-Yo-Tx7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="dQ2-Yh-xSX"/>
+                    <constraint firstItem="xzN-Oi-ycc" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="kQt-g0-y5u"/>
+                    <constraint firstItem="MZa-pu-0Yh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="q5w-02-lBz"/>
+                    <constraint firstItem="SGp-pN-VZi" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="rim-nf-dHe"/>
                     <constraint firstItem="u2O-mj-qil" firstAttribute="leading" secondItem="YVJ-7w-2XO" secondAttribute="leading" id="s3N-VV-ArU"/>
                     <constraint firstItem="u2O-mj-qil" firstAttribute="trailing" secondItem="YVJ-7w-2XO" secondAttribute="trailing" id="t8R-m0-HBG"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="contentsLbl" destination="Pdm-R9-I6N" id="jHb-YZ-Y8I"/>
+                <outlet property="contentsLbl" destination="xzN-Oi-ycc" id="yu5-pB-11y"/>
                 <outlet property="dateCreatedLbl" destination="u2O-mj-qil" id="5Z0-4b-BOh"/>
                 <outlet property="iconImageView" destination="j1g-uX-q53" id="YCs-TN-dtF"/>
                 <outlet property="nameLabel" destination="YVJ-7w-2XO" id="ROf-rp-DuC"/>
+                <outlet property="photoImage" destination="rTJ-Yo-Tx7" id="MIL-BT-C8a"/>
             </connections>
-            <point key="canvasLocation" x="239" y="179"/>
+            <point key="canvasLocation" x="72" y="264.5"/>
         </tableViewCell>
     </objects>
 </document>

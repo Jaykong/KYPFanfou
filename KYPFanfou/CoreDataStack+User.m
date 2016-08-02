@@ -12,10 +12,10 @@ NSString *const USER_ENTITY = @"User";
 
 @implementation CoreDataStack (User)
 @dynamic currentUser;
--(User *)currentUser {
+- (User *)findUniqueEntityWithUniqueID:(NSString *)key value:(id)value {
     NSFetchRequest *fr = [[NSFetchRequest alloc] initWithEntityName:USER_ENTITY];
-    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isActive = %@",@YES];
-   // fr.predicate = predicate;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@",key,value];
+    fr.predicate = predicate;
     NSError *error;
     NSArray *users = [self.context executeFetchRequest:fr error:&error];
     if (users.count > 0) {
@@ -24,6 +24,15 @@ NSString *const USER_ENTITY = @"User";
     return nil;
 }
 
+-(User *)currentUser {
+    User *user = [self findUniqueEntityWithUniqueID:@"isActive" value:@YES];
+    return user;
+}
+//根据用户id查找用户数据
+- (User *)findUserWithId:(NSString *)uid {
+    User *user = [self findUniqueEntityWithUniqueID:@"uid" value:uid];
+    return user;
+}
 -(User *)checkImportedWithUserID:(NSString *)uid {
     NSFetchRequest *fr = [[NSFetchRequest alloc] initWithEntityName:USER_ENTITY];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uid like %@",uid];
@@ -48,8 +57,8 @@ NSString *const USER_ENTITY = @"User";
     
     user.token = token;
     user.tokenSecret = tokenSecret;
-    NSLog(@"%@",user.token);
-    NSLog(@"%@",user.tokenSecret);
+    // NSLog(@"%@",user.token);
+    // NSLog(@"%@",user.tokenSecret);
     return user;
 }
 

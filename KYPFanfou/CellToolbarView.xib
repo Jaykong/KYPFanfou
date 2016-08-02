@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CellToolbarView">
+            <rect key="frame" x="0.0" y="0.0" width="507" height="68"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="254-6x-Ykk" userLabel="1">
+                    <rect key="frame" x="8" y="8" width="164" height="52"/>
+                    <state key="normal" title="转发"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9E-MU-YOS" userLabel="2">
+                    <rect key="frame" x="172" y="8" width="163" height="52"/>
+                    <state key="normal" title="回复"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqa-0Q-avY" userLabel="3">
+                    <rect key="frame" x="335" y="8" width="164" height="52"/>
+                    <state key="normal" title="收藏"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottomMargin" secondItem="E9E-MU-YOS" secondAttribute="bottom" id="1nS-hd-QOc"/>
+                <constraint firstItem="254-6x-Ykk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="7gV-aT-SFY"/>
+                <constraint firstAttribute="trailingMargin" secondItem="Mqa-0Q-avY" secondAttribute="trailing" id="BRn-XX-yHh"/>
+                <constraint firstItem="E9E-MU-YOS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="EaC-qX-IXP"/>
+                <constraint firstItem="E9E-MU-YOS" firstAttribute="width" secondItem="254-6x-Ykk" secondAttribute="width" id="Jbz-Sh-VXU"/>
+                <constraint firstItem="E9E-MU-YOS" firstAttribute="leading" secondItem="254-6x-Ykk" secondAttribute="trailing" id="K35-PR-Opx"/>
+                <constraint firstAttribute="bottomMargin" secondItem="254-6x-Ykk" secondAttribute="bottom" id="NVH-LU-y8i"/>
+                <constraint firstItem="Mqa-0Q-avY" firstAttribute="width" secondItem="254-6x-Ykk" secondAttribute="width" id="VhM-x5-0UE"/>
+                <constraint firstItem="254-6x-Ykk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="WNx-Ms-Apb"/>
+                <constraint firstAttribute="bottomMargin" secondItem="Mqa-0Q-avY" secondAttribute="bottom" id="YXG-8a-v6a"/>
+                <constraint firstItem="Mqa-0Q-avY" firstAttribute="leading" secondItem="E9E-MU-YOS" secondAttribute="trailing" id="dBP-KN-UIN"/>
+                <constraint firstItem="Mqa-0Q-avY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="qBZ-Vu-8oP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="359.5" y="123"/>
+        </view>
+    </objects>
+</document>

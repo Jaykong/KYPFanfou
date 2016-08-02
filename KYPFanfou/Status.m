@@ -8,7 +8,7 @@
 
 #import "Status.h"
 #import "User.h"
-
+#import "Photo.h"
 @implementation Status
 
 // Insert code here to add functionality to your managed object subclass

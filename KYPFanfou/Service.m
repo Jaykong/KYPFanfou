@@ -93,8 +93,13 @@
             failure(error);
         } else {
             NSArray *result =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-            NSLog(@"%@",result);
-            sucess(result);
+            // NSLog(@"%@",result);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                sucess(result);
+                
+            });
+
         }
     }];
     
@@ -103,10 +108,9 @@
 #pragma mark - Status
 - (void)requestStatusWithSucess:(void (^)(NSArray *result))sucess failure:(void (^)(NSError *error))failure {
     User *user = [CoreDataStack sharedCoreDataStack].currentUser;
-//    NSLog(@"%@",user.token);
-//    NSLog(@"%@",user.tokenSecret);
-    //    [self requestWithPath:API_HOME_TIMELINE parameters:@{@"mode":@"lite"} accessToken:user.token, tokenSecret:user.tokenSecret requestMethod:@"GET" sucess:sucess failure:failure];
-    [self requestWithPath:API_HOME_TIMELINE parameters:nil accessToken:user.token tokenSecret:user.tokenSecret requestMethod:@"GET" sucess:sucess failure:failure];
+//        NSLog(@"%@",user.token);
+//        NSLog(@"%@",user.tokenSecret);
+    [self requestWithPath:API_HOME_TIMELINE parameters:@{@"mode":@"lite",@"count":@60,@"format":@"html"} accessToken:user.token tokenSecret:user.tokenSecret requestMethod:@"GET" sucess:sucess failure:failure];
 }
 
 @end

@@ -8,14 +8,22 @@
 
 #import <UIKit/UIKit.h>
 @class Status;
+@class CellToolbar;
+@class TimelineCell;
+@class DTAttributedLabel;
+typedef void (^DidSelectPhotoBlock)(TimelineCell *cell);
+
 @interface TimelineCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateCreatedLbl;
-
-@property (weak, nonatomic) IBOutlet UILabel *contentsLbl;
-
+@property (weak, nonatomic) IBOutlet DTAttributedLabel *contentsLbl;
+@property (weak, nonatomic) IBOutlet UIImageView *photoImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeightConstraint;
+@property (weak, nonatomic) IBOutlet CellToolbar *cellToolbar;
+@property (nonatomic,strong) DidSelectPhotoBlock didSelectPhotoBlock;
 - (void)configureWithStatus:(Status *)status;
+
 
 @end

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CellToolbar">
+            <rect key="frame" x="0.0" y="0.0" width="503" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8F6-Fb-pBJ">
+                    <rect key="frame" x="8" y="8" width="162" height="14"/>
+                    <state key="normal" title="回复"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oq9-eD-UON">
+                    <rect key="frame" x="170" y="8" width="163" height="14"/>
+                    <state key="normal" title="收藏"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fex-Tu-zRm">
+                    <rect key="frame" x="333" y="8" width="162" height="14"/>
+                    <state key="normal" title="转发"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.30782103020000001" green="1" blue="0.25465691940000001" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottomMargin" secondItem="8F6-Fb-pBJ" secondAttribute="bottom" id="3eT-Em-Uli"/>
+                <constraint firstItem="8F6-Fb-pBJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="7Z0-eG-BSt"/>
+                <constraint firstItem="fex-Tu-zRm" firstAttribute="leading" secondItem="oq9-eD-UON" secondAttribute="trailing" id="EhS-Wk-PyY"/>
+                <constraint firstAttribute="bottomMargin" secondItem="oq9-eD-UON" secondAttribute="bottom" id="G3T-mn-1qD"/>
+                <constraint firstItem="8F6-Fb-pBJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="I4m-sq-bUW"/>
+                <constraint firstItem="fex-Tu-zRm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="NHp-8T-EUd"/>
+                <constraint firstAttribute="trailingMargin" secondItem="fex-Tu-zRm" secondAttribute="trailing" id="O3Y-cx-Ii8"/>
+                <constraint firstItem="oq9-eD-UON" firstAttribute="leading" secondItem="8F6-Fb-pBJ" secondAttribute="trailing" id="Pxd-ZX-onY"/>
+                <constraint firstAttribute="bottomMargin" secondItem="fex-Tu-zRm" secondAttribute="bottom" id="UdB-u1-dCt"/>
+                <constraint firstItem="oq9-eD-UON" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="acQ-x2-kpH"/>
+                <constraint firstItem="oq9-eD-UON" firstAttribute="width" secondItem="8F6-Fb-pBJ" secondAttribute="width" id="h9s-hN-aU8"/>
+                <constraint firstItem="fex-Tu-zRm" firstAttribute="width" secondItem="8F6-Fb-pBJ" secondAttribute="width" id="mMy-Sa-8tp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="499.5" y="293"/>
+        </view>
+    </objects>
+</document>

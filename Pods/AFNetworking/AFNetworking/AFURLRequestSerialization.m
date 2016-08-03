@@ -587,6 +587,7 @@ static NSString * const kAFMultipartFormCRLF = @"\r\n";
 
 static inline NSString * AFMultipartFormInitialBoundary(NSString *boundary) {
     return [NSString stringWithFormat:@"--%@%@", boundary, kAFMultipartFormCRLF];
+
 }
 
 static inline NSString * AFMultipartFormEncapsulationBoundary(NSString *boundary) {

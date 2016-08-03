@@ -38,8 +38,10 @@
     
 }
 - (void)refreshData {
-    [self requestData];
+    NSLog(@"refresh");
+    //[self requestData];
     [self.refreshControl endRefreshing];
+    [self.tableView reloadData];
 }
 - (void)requestData {
     [[Service sharedInstance] requestStatusWithSucess:^(NSArray *result) {

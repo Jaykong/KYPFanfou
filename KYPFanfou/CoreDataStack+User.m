@@ -44,7 +44,7 @@ NSString *const USER_ENTITY = @"User";
     }
     return nil;
 }
-
+//插入或更新用户数据
 -(User *)insertOrUpdateWithUserProfile:(NSDictionary *)userProfile token:(NSString *)token tokenSecret:(NSString *)tokenSecret {
     
     User *user =  [self checkImportedWithUserID:userProfile[@"id"]];
@@ -54,9 +54,15 @@ NSString *const USER_ENTITY = @"User";
     user.name = userProfile[@"name"];
     user.uid = userProfile[@"id"];
     user.iconURL = userProfile[@"profile_image_url"];
-    
-    user.token = token;
-    user.tokenSecret = tokenSecret;
+    //请求home time api
+    //1. status 插入
+    //2. user 插入
+    if (token) {
+        user.token = token;
+    }
+    if (tokenSecret) {
+        user.tokenSecret = tokenSecret;
+    }
     // NSLog(@"%@",user.token);
     // NSLog(@"%@",user.tokenSecret);
     return user;

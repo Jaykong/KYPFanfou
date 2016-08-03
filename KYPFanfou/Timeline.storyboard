@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lg3-rP-BcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="528" y="354"/>
+            <point key="canvasLocation" x="297" y="354"/>
         </scene>
         <!--Timeline Table View Controller-->
         <scene sceneID="HcN-4C-Tn8">
@@ -38,11 +38,25 @@
                             <outlet property="delegate" destination="v2L-e5-ySb" id="XC5-2Y-RUv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Axx-1j-kMm"/>
+                    <navigationItem key="navigationItem" id="Axx-1j-kMm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="2gX-xS-oXR">
+                            <connections>
+                                <segue destination="fxy-gf-lg8" kind="presentation" id="Pr7-p6-ep4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHz-jD-u4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1139" y="354"/>
+            <point key="canvasLocation" x="943" y="354"/>
+        </scene>
+        <!--Compose-->
+        <scene sceneID="PJt-v6-reo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Compose" id="fxy-gf-lg8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mLZ-MH-DZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1411.5" y="354"/>
         </scene>
     </scenes>
 </document>

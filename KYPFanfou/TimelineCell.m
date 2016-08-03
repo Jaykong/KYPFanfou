@@ -28,16 +28,16 @@
     self.dateCreatedLbl.text = [formatter stringFromDate:status.created_at ];
     
     NSDictionary *options = @{
-    DTDefaultFontName:@"HelveticaNeue-Light",
-    DTDefaultFontSize:@16,
-    DTDefaultLinkColor:[UIColor blueColor]
-    };
+                              DTDefaultFontName:@"HelveticaNeue-Light",
+                              DTDefaultFontSize:@16,
+                              DTDefaultLinkColor:[UIColor blueColor]
+                              };
     NSAttributedString *attribStr = [[NSAttributedString alloc] initWithHTMLData:[status.text dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil];
-    
+    // NSAttributedString *attribStr = [[NSAttributedString alloc] initWithString:status.text] ;
     self.contentsLbl.attributedString = attribStr;
     self.contentsLbl.numberOfLines = 0;
-
-
+    
+    
     NSURL *url = [NSURL URLWithString:status.user.iconURL];
     [self.iconImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"BackgroundAvatar"] options:SDWebImageProgressiveDownload];
     

@@ -24,6 +24,8 @@
 		A969C6D71D4748D200ABBCF2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A969C6D51D4748D200ABBCF2 /* Model.xcdatamodeld */; };
 		A969C6DD1D47558900ABBCF2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6DB1D47558900ABBCF2 /* User.m */; };
 		A969C6E11D4755FE00ABBCF2 /* CoreDataStack+User.m in Sources */ = {isa = PBXBuildFile; fileRef = A969C6E01D4755FE00ABBCF2 /* CoreDataStack+User.m */; };
+		A986ACF61D51BC1900DBD64D /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A986ACF51D51BC1900DBD64D /* Compose.storyboard */; };
+		A986ACF91D51BC3A00DBD64D /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986ACF81D51BC3A00DBD64D /* ComposeViewController.m */; };
 		A9D487671D508E1C00617B99 /* CellToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D487661D508E1C00617B99 /* CellToolbarView.m */; };
 		A9D487691D508E3F00617B99 /* CellToolbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D487681D508E3F00617B99 /* CellToolbarView.xib */; };
 		A9ECFC0D1D487AC50009C71E /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ECFC0C1D487AC50009C71E /* Service.m */; };
@@ -80,6 +82,9 @@
 		A969C6DB1D47558900ABBCF2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		A969C6DF1D4755FE00ABBCF2 /* CoreDataStack+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreDataStack+User.h"; sourceTree = "<group>"; };
 		A969C6E01D4755FE00ABBCF2 /* CoreDataStack+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CoreDataStack+User.m"; sourceTree = "<group>"; };
+		A986ACF51D51BC1900DBD64D /* Compose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Compose.storyboard; sourceTree = "<group>"; };
+		A986ACF71D51BC3A00DBD64D /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		A986ACF81D51BC3A00DBD64D /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		A9D487651D508E1C00617B99 /* CellToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellToolbarView.h; sourceTree = "<group>"; };
 		A9D487661D508E1C00617B99 /* CellToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellToolbarView.m; sourceTree = "<group>"; };
 		A9D487681D508E3F00617B99 /* CellToolbarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellToolbarView.xib; sourceTree = "<group>"; };
@@ -185,6 +190,16 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		A986ACF41D51BC0000DBD64D /* Compse */ = {
+			isa = PBXGroup;
+			children = (
+				A986ACF51D51BC1900DBD64D /* Compose.storyboard */,
+				A986ACF71D51BC3A00DBD64D /* ComposeViewController.h */,
+				A986ACF81D51BC3A00DBD64D /* ComposeViewController.m */,
+			);
+			name = Compse;
+			sourceTree = "<group>";
+		};
 		A9D487641D508DDF00617B99 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +273,7 @@
 				A9FF58071D45D669003006DE /* AppDelegate.m */,
 				A9FF58091D45D669003006DE /* ViewController.h */,
 				A9FF580A1D45D669003006DE /* ViewController.m */,
+				A986ACF41D51BC0000DBD64D /* Compse */,
 				A9FF58211D45E1AF003006DE /* Main */,
 				A9FF580F1D45D669003006DE /* Assets.xcassets */,
 				A9FF58111D45D669003006DE /* LaunchScreen.storyboard */,
@@ -386,6 +402,7 @@
 				A9D487691D508E3F00617B99 /* CellToolbarView.xib in Resources */,
 				A9FF581E1D45D844003006DE /* Accounts.storyboard in Resources */,
 				A9FF58131D45D669003006DE /* LaunchScreen.storyboard in Resources */,
+				A986ACF61D51BC1900DBD64D /* Compose.storyboard in Resources */,
 				A9FF58271D45E500003006DE /* Me.storyboard in Resources */,
 				A9FF58101D45D669003006DE /* Assets.xcassets in Resources */,
 				A9ECFC301D49ED970009C71E /* TimelineCell.xib in Resources */,
@@ -454,6 +471,7 @@
 				A9ECFC2F1D49ED970009C71E /* TimelineCell.m in Sources */,
 				17433C3C1D4E568D006B3E4E /* CellToolbar.m in Sources */,
 				A9FF580B1D45D669003006DE /* ViewController.m in Sources */,
+				A986ACF91D51BC3A00DBD64D /* ComposeViewController.m in Sources */,
 				A969C6E11D4755FE00ABBCF2 /* CoreDataStack+User.m in Sources */,
 				17433C371D4E450E006B3E4E /* Photo+CoreDataProperties.m in Sources */,
 				A9ECFC0D1D487AC50009C71E /* Service.m in Sources */,

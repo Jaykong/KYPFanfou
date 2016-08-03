@@ -52,8 +52,11 @@
                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="362" placeholderIntrinsicHeight="23" translatesAutoresizingMaskIntoConstraints="NO" id="xzN-Oi-ycc" customClass="DTAttributedLabel">
                         <rect key="frame" x="8" y="76" width="362" height="85"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="85" id="yrh-PO-6Rc"/>
+                        </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGp-pN-VZi">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGp-pN-VZi" userLabel="4" customClass="CellToolbar">
                         <rect key="frame" x="8" y="372" width="362" height="30"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -87,9 +90,11 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="cellToolbar" destination="SGp-pN-VZi" id="oMW-Xm-D7b"/>
                 <outlet property="contentsLbl" destination="xzN-Oi-ycc" id="yu5-pB-11y"/>
                 <outlet property="dateCreatedLbl" destination="u2O-mj-qil" id="5Z0-4b-BOh"/>
                 <outlet property="iconImageView" destination="j1g-uX-q53" id="YCs-TN-dtF"/>
+                <outlet property="imageHeightConstraint" destination="7cD-6x-hoc" id="aEu-D7-MX1"/>
                 <outlet property="nameLabel" destination="YVJ-7w-2XO" id="ROf-rp-DuC"/>
                 <outlet property="photoImage" destination="rTJ-Yo-Tx7" id="MIL-BT-C8a"/>
             </connections>

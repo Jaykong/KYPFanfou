@@ -85,6 +85,7 @@
 		A986ACF51D51BC1900DBD64D /* Compose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Compose.storyboard; sourceTree = "<group>"; };
 		A986ACF71D51BC3A00DBD64D /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		A986ACF81D51BC3A00DBD64D /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		A9C33AC21D532DE800303B81 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		A9D487651D508E1C00617B99 /* CellToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellToolbarView.h; sourceTree = "<group>"; };
 		A9D487661D508E1C00617B99 /* CellToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellToolbarView.m; sourceTree = "<group>"; };
 		A9D487681D508E3F00617B99 /* CellToolbarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellToolbarView.xib; sourceTree = "<group>"; };
@@ -653,9 +654,10 @@
 		A969C6D51D4748D200ABBCF2 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				A9C33AC21D532DE800303B81 /* Model 2.xcdatamodel */,
 				A969C6D61D4748D200ABBCF2 /* Model.xcdatamodel */,
 			);
-			currentVersion = A969C6D61D4748D200ABBCF2 /* Model.xcdatamodel */;
+			currentVersion = A9C33AC21D532DE800303B81 /* Model 2.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

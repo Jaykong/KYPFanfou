@@ -7,7 +7,8 @@
 //
 
 #import "CoreDataStack.h"
-
+@class Status;
 @interface CoreDataStack (Status)
 - (void)insertOrUpdateStatusWithObjects:(NSArray *)objects;
+- (Status *)insertOrUpdateStatusWithStatusProfile:(NSDictionary *)statusProfile;
 @end

@@ -15,7 +15,8 @@
 #import <JTSImageViewController/JTSImageViewController.h>
 #import <SDWebImage/SDImageCache.h>
 #import "Photo.h"
-@interface TimelineTableViewController ()<JTSImageViewControllerInteractionsDelegate>
+#import "CellToolbar.h"
+@interface TimelineTableViewController ()<JTSImageViewControllerInteractionsDelegate,CellToolbarDelegate>
 
 @end
 
@@ -39,17 +40,14 @@
 }
 - (void)refreshData {
     NSLog(@"refresh");
-    //[self requestData];
+    [self requestData];
     [self.refreshControl endRefreshing];
-    [self.tableView reloadData];
 }
 - (void)requestData {
     [[Service sharedInstance] requestStatusWithSucess:^(NSArray *result) {
         [[CoreDataStack sharedCoreDataStack] insertOrUpdateStatusWithObjects:result];
         [self configureFetch];
         [self performFetch];
-        
-        
     } failure:^(NSError *error) {
         
     }];
@@ -95,15 +93,44 @@
     Status *status =  [self.frc objectAtIndexPath:indexPath];
     //NSLog(@"status:%@",status);
     [cell configureWithStatus:status];
-    cell.didSelectPhotoBlock = ^(TimelineCell *cell) {
+    cell.didSelectPhotoBlock = ^
+    (TimelineCell *cell) {
         [self showPhotoFromSourceCell:cell photo:status.photo];
         
     };
-    
+    //配置收藏按钮
+    [cell.cellToolbar setupStarButtonWithBool:status.favorited.boolValue];
+    cell.cellToolbar.delegate = self;
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
 
+#pragma  mark - Cell Toolbar Delegate
+- (void)starWithCellToolbar:(CellToolbar *)toolbar sender:(id)sender forEvent:(UIEvent *)event {
+    
+    //取到收藏所在的indexPath，也就是所在的cell
+    //取到所有的touches
+    NSSet *touches = [event allTouches];//这个集合会记录一系列的点击事件
+    //取到某一个touch
+    UITouch *touch = [touches anyObject];
+    //取到这个touch所在的位置location
+    CGPoint point = [touch locationInView:self.tableView];
+    //最后获取到这个位置所在的index path
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    //用frc取到这个cell下的status对象
+    Status *status =  [self.frc objectAtIndexPath:indexPath];
+    
+    //请求收藏接口
+    [[Service sharedInstance] starWithStatusID:status.sid sucess:^(NSArray *result) {
+        NSLog(@"%@",result);
+        [[CoreDataStack sharedCoreDataStack] insertOrUpdateStatusWithStatusProfile:result];
+        [toolbar setupStarButtonWithBool:status.favorited.boolValue];
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+
+}
 @end

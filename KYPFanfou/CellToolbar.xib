@@ -15,14 +15,23 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8F6-Fb-pBJ">
                     <rect key="frame" x="8" y="8" width="162" height="14"/>
                     <state key="normal" title="回复"/>
+                    <connections>
+                        <action selector="reply:forEvent:" destination="iN0-l3-epB" eventType="touchUpInside" id="jfE-2V-OlE"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oq9-eD-UON">
                     <rect key="frame" x="170" y="8" width="163" height="14"/>
                     <state key="normal" title="收藏"/>
+                    <connections>
+                        <action selector="star:forEvent:" destination="iN0-l3-epB" eventType="touchUpInside" id="HFg-Wz-Lll"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fex-Tu-zRm">
                     <rect key="frame" x="333" y="8" width="162" height="14"/>
                     <state key="normal" title="转发"/>
+                    <connections>
+                        <action selector="repost:forEvent:" destination="iN0-l3-epB" eventType="touchUpInside" id="gUU-LU-BUe"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.30782103020000001" green="1" blue="0.25465691940000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,6 +50,9 @@
                 <constraint firstItem="fex-Tu-zRm" firstAttribute="width" secondItem="8F6-Fb-pBJ" secondAttribute="width" id="mMy-Sa-8tp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="starBtn" destination="oq9-eD-UON" id="OKu-Ym-YXB"/>
+            </connections>
             <point key="canvasLocation" x="499.5" y="293"/>
         </view>
     </objects>

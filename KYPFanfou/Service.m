@@ -16,7 +16,7 @@
 @end
 
 @implementation Service
-
+//单例
 +(instancetype)sharedInstance {
     static Service *service;
     static dispatch_once_t onceToken;
@@ -26,8 +26,7 @@
     });
     return service;
 }
-
-
+//覆写init
 -(instancetype)init {
     self = [super init];
     if (self) {
@@ -37,7 +36,7 @@
     }
     return  self;
 }
-
+#pragma mark - XAuth 授权
 //xAuth
 //最终目的是获取到access token and access secret
 - (void)authoriseWithUserName:(NSString *)userName password:(NSString *)password success:(void (^)(NSString *token,NSString *tokenSecret))sucess  {
@@ -70,6 +69,7 @@
     [task resume];
     
 }
+//获取用户信息
 - (void)requestVerifyCredential:(NSDictionary *)parameters accessToken:(NSString *)accessToken tokenSecret:(NSString *)tokenSecret requestMethod:(NSString *)requestMethod sucess:(void (^)(NSDictionary *result))sucess {
     NSURLRequest *request = [TDOAuth URLRequestForPath:API_VERIFY_CREDENTIALS parameters:parameters host:FANFOU_API_HOST consumerKey:CONSUMER_KEY consumerSecret:CONSUMER_SECRET accessToken:accessToken tokenSecret:tokenSecret scheme:@"http" requestMethod:requestMethod dataEncoding:TDOAuthContentTypeUrlEncodedForm headerValues:nil signatureMethod:TDOAuthSignatureMethodHmacSha1];
     
@@ -83,11 +83,32 @@
     [task resume];
 }
 
-
-#pragma mark - Base Request 
-
+#pragma mark - Base Request
+//base
+//授权时候要使用
 - (void)requestWithPath:(NSString *)path parameters:(NSDictionary *)parameters accessToken:(NSString *)accessToken tokenSecret:(NSString *)tokenSecret requestMethod:(NSString *)requestMethod sucess:(void (^)(NSArray *result))sucess failure:(void (^)(NSError *error))failure {
     NSURLRequest *request = [TDOAuth URLRequestForPath:path parameters:parameters host:FANFOU_API_HOST consumerKey:CONSUMER_KEY consumerSecret:CONSUMER_SECRET accessToken:accessToken tokenSecret:tokenSecret scheme:@"http" requestMethod:requestMethod dataEncoding:TDOAuthContentTypeUrlEncodedForm headerValues:nil signatureMethod:TDOAuthSignatureMethodHmacSha1];
+    NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@",error);
+            failure(error);
+        } else {
+            NSArray *result =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+            NSLog(@"%@",result);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                sucess(result);
+                
+            });
+        }
+    }];
+    
+    [task resume];
+}
+//重构base request 方法，把和access token有关的参数把到方法内部
+- (void)requestWithPath:(NSString *)path parameters:(NSDictionary *)parameters requestMethod:(NSString *)requestMethod sucess:(void (^)(NSArray *result))sucess failure:(void (^)(NSError *error))failure {
+    User *user = [CoreDataStack sharedCoreDataStack].currentUser;
+    NSURLRequest *request = [TDOAuth URLRequestForPath:path parameters:parameters host:FANFOU_API_HOST consumerKey:CONSUMER_KEY consumerSecret:CONSUMER_SECRET accessToken:user.token tokenSecret:user.tokenSecret scheme:@"http" requestMethod:requestMethod dataEncoding:TDOAuthContentTypeUrlEncodedForm headerValues:nil signatureMethod:TDOAuthSignatureMethodHmacSha1];
     NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"%@",error);
@@ -107,7 +128,35 @@
     [task resume];
 }
 
-//post photo
+#pragma mark - Status
+//API_HOME_TIMELINE
+- (void)requestStatusWithSucess:(void (^)(NSArray *result))sucess failure:(void (^)(NSError *error))failure {
+    [self requestWithPath:API_HOME_TIMELINE parameters:@{@"mode":@"lite",@"count":@60,@"format":@"html"} requestMethod:@"GET" sucess:sucess failure:failure];
+}
+
+#pragma mark - POST DATA 发饭
+//包含文本和图片
+- (void)postData:(NSString *)text imageData:(NSData *)imageData replyToStatusID:(NSString *)replyToStatusID repostStatusID:(NSString *)repostStatusID sucess:(void (^)(NSArray *result))sucess failure:(void (^)(NSError *error))failure   {
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary new];
+    parameters[@"status"] = text;
+    parameters[@"format"] = @"html";
+    
+    if (replyToStatusID) {
+        parameters[@"in_reply_to_status_id"] = replyToStatusID;
+    }
+    if (repostStatusID) {
+        parameters[@"repost_status_id"] = repostStatusID;
+    }
+    if (imageData) {
+        //发布图片的接口
+        [self postPhotoWithPath:API_UPLOAD_PHOTO parameters:parameters sucess:sucess failure:failure imageData:imageData];
+    } else {
+        //发布文本的接口
+        [self requestWithPath:API_UPDATE_TEXT parameters:parameters requestMethod:@"POST" sucess:sucess failure:failure];
+    }
+}
+//post photo 在资源文件使用 priviate method
 - (void)postPhotoWithPath:(NSString *)path parameters:(NSDictionary *)parameters sucess:(void (^)(NSArray *result))sucess failure:(void (^)(NSError *error))failure imageData:(NSData *)imageData{
     //get current use to aquire token and token secret
     User *user = [CoreDataStack sharedCoreDataStack].currentUser;
@@ -138,41 +187,9 @@
     
     [task resume];
 }
-#pragma mark - Status
-- (void)requestStatusWithSucess:(void (^)(NSArray *result))sucess failure:(void (^)(NSError *error))failure {
-    User *user = [CoreDataStack sharedCoreDataStack].currentUser;
-    NSLog(@"%@",user.token);
-    NSLog(@"%@",user.tokenSecret);
-    [self requestWithPath:API_HOME_TIMELINE parameters:@{@"mode":@"lite",@"count":@60,@"format":@"html"} accessToken:user.token tokenSecret:user.tokenSecret requestMethod:@"GET" sucess:sucess failure:failure];
-}
-#pragma mark - POST DATA
-
-- (void)postData:(NSString *)text imageData:(NSData *)imageData replyToStatusID:(NSString *)replyToStatusID repostStatusID:(NSString *)repostStatusID sucess:(void (^)(NSArray *result))sucess failure:(void (^)(NSError *error))failure   {
-    
-    NSMutableDictionary *parameters = [NSMutableDictionary new];
-    parameters[@"status"] = text;
-    parameters[@"format"] = @"html";
-    
-    if (replyToStatusID) {
-        parameters[@"in_reply_to_status_id"] = replyToStatusID;
-    }
-    if (repostStatusID) {
-        parameters[@"repost_status_id"] = repostStatusID;
-    }
-    if (imageData) {
-        //发布图片的接口
-        [self postPhotoWithPath:API_UPLOAD_PHOTO parameters:parameters sucess:sucess failure:failure imageData:imageData];
-    } else {
-        //发布文本的接口
-        User *user = [CoreDataStack sharedCoreDataStack].currentUser;
-        [self requestWithPath:API_UPDATE_TEXT parameters:parameters accessToken:user.token tokenSecret:user.tokenSecret requestMethod:@"POST" sucess:sucess failure:failure];
-        
-    }
-}
-
 
 #pragma mark - PhotoUpload
-
+//用图片上传的表单格式的构造
 - (NSData *)createBodyWithBoundary:(NSString *)boundary parameters:(NSDictionary *)parameters data:(NSData *)data fileName:(NSString *)fileName
 {
     NSMutableData *httpBody = [NSMutableData data];
@@ -199,5 +216,10 @@
     return [NSString stringWithFormat:@"Boundary-%@", [[NSUUID UUID] UUIDString]];
 }
 
+#pragma mark - 收藏
+- (void)starWithStatusID:(NSString *)statusID sucess:(void(^)(NSArray *))sucess failure:(void (^)(NSError *error))failure {
+    NSString *path = [NSString stringWithFormat:@"%@:%@.json",API_FAVORITES_CREATE,statusID];
+    [self requestWithPath:path parameters:nil requestMethod:@"POST" sucess:sucess failure:failure];
+}
 
 @end

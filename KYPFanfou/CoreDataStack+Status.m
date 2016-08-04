@@ -55,7 +55,10 @@ static NSString *const PHOTO_ENTITY = @"Photo";
     dateFormatter.dateFormat = @"E MM dd HH:mm:ssZZZZZ yyyy";
     NSDate *createdDate = [dateFormatter dateFromString:createdStr];
     status.created_at = createdDate;
-    
+    //
+    NSString *favStr = statusProfile[@"favorited"];
+    //布尔转成nsnumber
+    status.favorited = @(favStr.boolValue);
    //更新用户图片url
     NSDictionary *photoDic = statusProfile[@"photo"];
     photo.imageurl = photoDic[@"imageurl"];

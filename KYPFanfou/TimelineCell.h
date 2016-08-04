@@ -21,7 +21,8 @@ typedef void (^DidSelectPhotoBlock)(TimelineCell *cell);
 @property (weak, nonatomic) IBOutlet DTAttributedLabel *contentsLbl;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImage;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeightConstraint;
-@property (weak, nonatomic) IBOutlet CellToolbar *cellToolbar;
+@property (weak, nonatomic) IBOutlet CellToolbar *toolbar;
+@property (weak, nonatomic) CellToolbar *cellToolbar;
 @property (nonatomic,strong) DidSelectPhotoBlock didSelectPhotoBlock;
 - (void)configureWithStatus:(Status *)status;
 

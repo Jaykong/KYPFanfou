@@ -14,14 +14,15 @@
 #import "DTAttributedLabel.h"
 #import "NSMutableAttributedString+HTML.h"
 #import <DTCoreText.h>
-@interface TimelineCell() <DTAttributedTextContentViewDelegate>
+@interface TimelineCell() <DTAttributedTextContentViewDelegate> {
+
+}
 @end
 
 @implementation TimelineCell
-
+@synthesize cellToolbar;
 - (void)configureWithStatus:(Status *)status; {
     self.nameLabel.text = status.user.name;
-    //self.idLabel.text = status.user.uid;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateStyle = NSDateFormatterShortStyle;
     formatter.timeStyle = NSDateFormatterShortStyle;
@@ -51,30 +52,39 @@
         
     }
     
+    //创建cell tool bar
     
-    UINib *nib = [UINib nibWithNibName:@"CellToolbar" bundle:nil];
-    NSArray *views = [nib instantiateWithOwner:nil options:nil];
-    if (views.count > 0) {
-        CellToolbar *cellToolbar = views[0];
-        //  NSLog(@"%@",cellToolbar);
-        //  _cellToolbar = cellToolbar;
-        [_cellToolbar addSubview:cellToolbar];
-        cellToolbar.translatesAutoresizingMaskIntoConstraints = NO;
-        NSLayoutConstraint *topConstraint = [cellToolbar.topAnchor constraintEqualToAnchor:_cellToolbar.topAnchor];
-        NSLayoutConstraint *bottomConstraint = [cellToolbar.bottomAnchor constraintEqualToAnchor:_cellToolbar.bottomAnchor];
-        
-        NSLayoutConstraint *leftConstraint = [cellToolbar.leftAnchor constraintEqualToAnchor:_cellToolbar.leftAnchor];
-        
-        NSLayoutConstraint *rightConstraint = [cellToolbar.rightAnchor constraintEqualToAnchor:_cellToolbar.rightAnchor];
-        topConstraint.active = YES;
-        bottomConstraint.active = YES;
-        leftConstraint.active = YES;
-        rightConstraint.active = YES;
-        
-    }
-    
-    
+    cellToolbar = [self creatCellToolbar];
+    /**
+     作代码布局要注间哪两点
+     1.automask NO，这两个是冲突的
+     2.视图的层次关系要加好，也是要加好subviews
+     */
+
+    //取消Autoresizing的自动约束
+    cellToolbar.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.toolbar addSubview:cellToolbar];
+    //创建约束
+    NSLayoutConstraint *top = [cellToolbar.topAnchor constraintEqualToAnchor:self.toolbar.topAnchor];
+    NSLayoutConstraint *bottom = [cellToolbar.bottomAnchor constraintEqualToAnchor:self.toolbar.bottomAnchor];
+    NSLayoutConstraint *left = [cellToolbar.leftAnchor constraintEqualToAnchor:self.toolbar.leftAnchor];
+    NSLayoutConstraint *right = [cellToolbar.rightAnchor constraintEqualToAnchor:self.toolbar.rightAnchor];
+    //激活约束
+    top.active = YES;
+    bottom.active = YES;
+    left.active = YES;
+    right.active = YES;
+
 }
+//创建cell tool bar
+- (CellToolbar *)creatCellToolbar {
+    //从bundle里面根据xib创建views
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"CellToolbar" owner:nil options:nil];
+    //当前nsarray 只有一个对象
+    CellToolbar *cellTboolbar = views[0];
+    return cellTboolbar;
+}
+
 - (IBAction)showLargePhotoImage:(UIButton *)sender {
     NSLog(@"%s",__FUNCTION__);
     _didSelectPhotoBlock(self);

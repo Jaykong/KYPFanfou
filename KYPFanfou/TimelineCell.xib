@@ -58,7 +58,7 @@
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGp-pN-VZi" userLabel="4" customClass="CellToolbar">
                         <rect key="frame" x="8" y="372" width="362" height="30"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.21086906599999999" green="0.82193876499999996" blue="0.31261223700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="FGG-Ig-IeZ"/>
                         </constraints>
@@ -90,15 +90,15 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="cellToolbar" destination="SGp-pN-VZi" id="oMW-Xm-D7b"/>
                 <outlet property="contentsLbl" destination="xzN-Oi-ycc" id="yu5-pB-11y"/>
                 <outlet property="dateCreatedLbl" destination="u2O-mj-qil" id="5Z0-4b-BOh"/>
                 <outlet property="iconImageView" destination="j1g-uX-q53" id="YCs-TN-dtF"/>
                 <outlet property="imageHeightConstraint" destination="7cD-6x-hoc" id="aEu-D7-MX1"/>
                 <outlet property="nameLabel" destination="YVJ-7w-2XO" id="ROf-rp-DuC"/>
                 <outlet property="photoImage" destination="rTJ-Yo-Tx7" id="MIL-BT-C8a"/>
+                <outlet property="toolbar" destination="SGp-pN-VZi" id="PNe-x7-wMR"/>
             </connections>
-            <point key="canvasLocation" x="72" y="264.5"/>
+            <point key="canvasLocation" x="-306" y="191.5"/>
         </tableViewCell>
     </objects>
 </document>

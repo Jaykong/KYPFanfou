@@ -1,13 +1,13 @@
 //
-//  TimelineTableViewController.h
+//  UserTableViewController.h
 //  KYPFanfou
 //
-//  Created by JayKong on 7/29/16.
+//  Created by JayKong on 8/8/16.
 //  Copyright © 2016 trainer. All rights reserved.
 //
 
 #import "CoreDataTableViewController.h"
 #import <ARSegmentPager/ARSegmentPageController.h>
-@interface TimelineTableViewController : CoreDataTableViewController <ARSegmentControllerDelegate>
+@interface UserViewController :ARSegmentPageController
 
 @end

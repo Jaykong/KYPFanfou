@@ -133,4 +133,9 @@
     }];
 
 }
+
+#pragma mark - <ARSegmentControllerDelegate>
+- (NSString *)segmentTitle {
+    return @"时间线";
+}
 @end

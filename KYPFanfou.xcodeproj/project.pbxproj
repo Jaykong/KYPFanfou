@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		173333D81D5764BA00A1E6A1 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 173333D71D5764BA00A1E6A1 /* MessageViewController.m */; };
 		173333DC1D57862700A1E6A1 /* NSDate+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 173333DB1D57862700A1E6A1 /* NSDate+Utility.m */; };
+		173333E11D57BDAE00A1E6A1 /* UserHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 173333E01D57BDAE00A1E6A1 /* UserHeaderView.m */; };
+		173333E31D57BDC600A1E6A1 /* UserHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 173333E21D57BDC600A1E6A1 /* UserHeaderView.xib */; };
+		173333E61D57C42C00A1E6A1 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 173333E51D57C42C00A1E6A1 /* UserViewController.m */; };
 		17433C2F1D4AF3A4006B3E4E /* TimelineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17433C2E1D4AF3A4006B3E4E /* TimelineTableViewController.m */; };
 		17433C321D4AF495006B3E4E /* CoreDataStack+Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 17433C311D4AF495006B3E4E /* CoreDataStack+Status.m */; };
 		17433C371D4E450E006B3E4E /* Photo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 17433C341D4E450E006B3E4E /* Photo+CoreDataProperties.m */; };
@@ -50,7 +53,6 @@
 		A9ECFC391D49F7EA0009C71E /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ECFC381D49F7EA0009C71E /* User+CoreDataProperties.m */; };
 		A9FF58051D45D669003006DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF58041D45D669003006DE /* main.m */; };
 		A9FF58081D45D669003006DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF58071D45D669003006DE /* AppDelegate.m */; };
-		A9FF580B1D45D669003006DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FF580A1D45D669003006DE /* ViewController.m */; };
 		A9FF580E1D45D669003006DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9FF580C1D45D669003006DE /* Main.storyboard */; };
 		A9FF58101D45D669003006DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9FF580F1D45D669003006DE /* Assets.xcassets */; };
 		A9FF58131D45D669003006DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9FF58111D45D669003006DE /* LaunchScreen.storyboard */; };
@@ -69,6 +71,11 @@
 		173333D71D5764BA00A1E6A1 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		173333DA1D57862700A1E6A1 /* NSDate+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utility.h"; sourceTree = "<group>"; };
 		173333DB1D57862700A1E6A1 /* NSDate+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utility.m"; sourceTree = "<group>"; };
+		173333DF1D57BDAE00A1E6A1 /* UserHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHeaderView.h; sourceTree = "<group>"; };
+		173333E01D57BDAE00A1E6A1 /* UserHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHeaderView.m; sourceTree = "<group>"; };
+		173333E21D57BDC600A1E6A1 /* UserHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserHeaderView.xib; sourceTree = "<group>"; };
+		173333E41D57C42C00A1E6A1 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		173333E51D57C42C00A1E6A1 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		17433C2D1D4AF3A4006B3E4E /* TimelineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineTableViewController.h; sourceTree = "<group>"; };
 		17433C2E1D4AF3A4006B3E4E /* TimelineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineTableViewController.m; sourceTree = "<group>"; };
 		17433C301D4AF495006B3E4E /* CoreDataStack+Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreDataStack+Status.h"; sourceTree = "<group>"; };
@@ -144,8 +151,6 @@
 		A9FF58041D45D669003006DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9FF58061D45D669003006DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A9FF58071D45D669003006DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A9FF58091D45D669003006DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A9FF580A1D45D669003006DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A9FF580D1D45D669003006DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9FF580F1D45D669003006DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9FF58121D45D669003006DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -177,6 +182,19 @@
 				173333DB1D57862700A1E6A1 /* NSDate+Utility.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		173333DD1D57BD5400A1E6A1 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				A9FF58261D45E500003006DE /* Me.storyboard */,
+				173333E41D57C42C00A1E6A1 /* UserViewController.h */,
+				173333E51D57C42C00A1E6A1 /* UserViewController.m */,
+				173333DF1D57BDAE00A1E6A1 /* UserHeaderView.h */,
+				173333E01D57BDAE00A1E6A1 /* UserHeaderView.m */,
+				173333E21D57BDC600A1E6A1 /* UserHeaderView.xib */,
+			);
+			name = UserProfile;
 			sourceTree = "<group>";
 		};
 		17433C391D4E5629006B3E4E /* Cell */ = {
@@ -341,21 +359,15 @@
 		A9FF58021D45D669003006DE /* KYPFanfou */ = {
 			isa = PBXGroup;
 			children = (
+				173333DD1D57BD5400A1E6A1 /* UserProfile */,
 				173333D91D5785F900A1E6A1 /* Utilities */,
 				A9ECFC0A1D487AAF0009C71E /* Service */,
 				A98BCB591D547B94008B91DF /* Messages */,
 				A969C6D11D47451E00ABBCF2 /* CoreData */,
 				A969C6C51D45F21700ABBCF2 /* Splash */,
 				A9FF581C1D45D6E5003006DE /* Login */,
-				A9FF58061D45D669003006DE /* AppDelegate.h */,
-				A9FF58071D45D669003006DE /* AppDelegate.m */,
-				A9FF58091D45D669003006DE /* ViewController.h */,
-				A9FF580A1D45D669003006DE /* ViewController.m */,
 				A986ACF41D51BC0000DBD64D /* Compse */,
 				A9FF58211D45E1AF003006DE /* Main */,
-				A9FF580F1D45D669003006DE /* Assets.xcassets */,
-				A9FF58111D45D669003006DE /* LaunchScreen.storyboard */,
-				A9FF58141D45D669003006DE /* Info.plist */,
 				A9FF58031D45D669003006DE /* Supporting Files */,
 			);
 			path = KYPFanfou;
@@ -364,6 +376,11 @@
 		A9FF58031D45D669003006DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A9FF580F1D45D669003006DE /* Assets.xcassets */,
+				A9FF58111D45D669003006DE /* LaunchScreen.storyboard */,
+				A9FF58141D45D669003006DE /* Info.plist */,
+				A9FF58061D45D669003006DE /* AppDelegate.h */,
+				A9FF58071D45D669003006DE /* AppDelegate.m */,
 				A9FF58041D45D669003006DE /* main.m */,
 			);
 			name = "Supporting Files";
@@ -389,7 +406,6 @@
 			children = (
 				A9FF580C1D45D669003006DE /* Main.storyboard */,
 				A9FF58221D45E1F6003006DE /* MentionMe.storyboard */,
-				A9FF58261D45E500003006DE /* Me.storyboard */,
 				A9ECFC2B1D49ED2A0009C71E /* Timeline */,
 			);
 			name = Main;
@@ -478,6 +494,7 @@
 				A969C6C11D45E7B900ABBCF2 /* Splash.storyboard in Resources */,
 				A9D487691D508E3F00617B99 /* CellToolbarView.xib in Resources */,
 				A9FF581E1D45D844003006DE /* Accounts.storyboard in Resources */,
+				173333E31D57BDC600A1E6A1 /* UserHeaderView.xib in Resources */,
 				A9FF58131D45D669003006DE /* LaunchScreen.storyboard in Resources */,
 				A986ACF61D51BC1900DBD64D /* Compose.storyboard in Resources */,
 				A9FF58271D45E500003006DE /* Me.storyboard in Resources */,
@@ -548,13 +565,14 @@
 				A9ECFC2F1D49ED970009C71E /* TimelineCell.m in Sources */,
 				17433C3C1D4E568D006B3E4E /* CellToolbar.m in Sources */,
 				A98BCB551D546FEC008B91DF /* CoreDataStack+Conversation.m in Sources */,
-				A9FF580B1D45D669003006DE /* ViewController.m in Sources */,
 				A98BCB481D545CD1008B91DF /* Message+CoreDataProperties.m in Sources */,
+				173333E61D57C42C00A1E6A1 /* UserViewController.m in Sources */,
 				A986ACF91D51BC3A00DBD64D /* ComposeViewController.m in Sources */,
 				173333D81D5764BA00A1E6A1 /* MessageViewController.m in Sources */,
 				A969C6E11D4755FE00ABBCF2 /* CoreDataStack+User.m in Sources */,
 				17433C371D4E450E006B3E4E /* Photo+CoreDataProperties.m in Sources */,
 				A9ECFC0D1D487AC50009C71E /* Service.m in Sources */,
+				173333E11D57BDAE00A1E6A1 /* UserHeaderView.m in Sources */,
 				A9FF58081D45D669003006DE /* AppDelegate.m in Sources */,
 				A98BCB5C1D547C1B008B91DF /* ConversationListViewController.m in Sources */,
 				A969C6CD1D473D0E00ABBCF2 /* UserTableViewCell.m in Sources */,
@@ -698,6 +716,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KYPFanfou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.universal.jk.KYPFanfou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -710,6 +729,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KYPFanfou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.universal.jk.KYPFanfou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

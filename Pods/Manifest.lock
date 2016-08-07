@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - ARSegmentPager (1.1.2)
   - DTCoreText (1.6.17):
     - DTFoundation/Core (~> 1.7.5)
     - DTFoundation/DTAnimatedGIF (~> 1.7.5)
@@ -39,6 +40,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - ARSegmentPager (from `https://github.com/AugustRush/ARSegmentPager.git`)
   - DTCoreText
   - JSQMessagesViewController
   - JTSImageViewController
@@ -46,8 +48,18 @@ DEPENDENCIES:
   - TDOAuth
   - TTTAttributedLabel
 
+EXTERNAL SOURCES:
+  ARSegmentPager:
+    :git: https://github.com/AugustRush/ARSegmentPager.git
+
+CHECKOUT OPTIONS:
+  ARSegmentPager:
+    :commit: e315dfe2bb75f55122b2b825282326ef5c0f4ef4
+    :git: https://github.com/AugustRush/ARSegmentPager.git
+
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  ARSegmentPager: daff3a6a14c71280a7494e404e658df45a38e3ae
   DTCoreText: 3ea8bba23dd2141ba18adb227a7dd33a822df1c4
   DTFoundation: 3b6b1b817d2a7fb02e7eaf2596c922a68145bd43
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
@@ -58,6 +70,6 @@ SPEC CHECKSUMS:
   TDOAuth: 82474f45874759a094034b9454c75153062f6771
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: fa94c196679090370938465b0330539c6977645f
+PODFILE CHECKSUM: bf4673a6c364700407cbf6361acae2b8931c8d3e
 
 COCOAPODS: 1.0.1

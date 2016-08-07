@@ -28,7 +28,7 @@
         <!--Timeline Table View Controller-->
         <scene sceneID="HcN-4C-Tn8">
             <objects>
-                <tableViewController id="v2L-e5-ySb" customClass="TimelineTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TimelineTableViewController" id="v2L-e5-ySb" customClass="TimelineTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ebk-1X-9GW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

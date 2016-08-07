@@ -11,5 +11,6 @@ pod 'JTSImageViewController'
 pod 'DTCoreText'
 pod 'TTTAttributedLabel'
 pod 'JSQMessagesViewController'
+pod 'ARSegmentPager', :git => 'https://github.com/AugustRush/ARSegmentPager.git'
 end
 

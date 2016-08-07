@@ -11,6 +11,7 @@
 #import "User.h"
 #import "CoreDataStack+User.h"
 #import "Photo.h"
+#import "CoreDataStack+Common.h"
 static NSString *const STATUS_ENTITY = @"Status";
 static NSString *const PHOTO_ENTITY = @"Photo";
 @implementation CoreDataStack (Status)
@@ -25,13 +26,7 @@ static NSString *const PHOTO_ENTITY = @"Photo";
             
             //set up relationship
             status.user = user;
-            
-            
-            
-            
-            
-            
-            
+
         }];
     }];
 }
@@ -51,10 +46,8 @@ static NSString *const PHOTO_ENTITY = @"Photo";
     status.source = statusProfile[@"source"];
     NSString *createdStr = statusProfile[@"created_at"];
     // NSLog(@"createdStr:%@",createdStr);
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"E MM dd HH:mm:ssZZZZZ yyyy";
-    NSDate *createdDate = [dateFormatter dateFromString:createdStr];
-    status.created_at = createdDate;
+   
+    status.created_at = [self dateFromString:createdStr];
     //
     NSString *favStr = statusProfile[@"favorited"];
     //布尔转成nsnumber

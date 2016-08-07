@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
+    <entity name="Conversation" representedClassName="Conversation" syncable="YES">
+        <attribute name="msg_num" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="new_conv" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="otherid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="message" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Message" syncable="YES"/>
+    </entity>
+    <entity name="Message" representedClassName="Message" syncable="YES">
+        <attribute name="created_at" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="mid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipient_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipient_screen_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sender_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sender_screen_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="recipient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+        <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
     <entity name="Photo" representedClassName="Photo" syncable="YES">
         <attribute name="imageurl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="largeurl" optional="YES" attributeType="String" syncable="YES"/>
@@ -28,5 +45,7 @@
         <element name="Photo" positionX="90" positionY="108" width="128" height="105"/>
         <element name="Status" positionX="-20" positionY="45" width="128" height="150"/>
         <element name="User" positionX="196" positionY="57" width="128" height="148"/>
+        <element name="Conversation" positionX="90" positionY="117" width="128" height="105"/>
+        <element name="Message" positionX="99" positionY="126" width="128" height="180"/>
     </elements>
 </model>

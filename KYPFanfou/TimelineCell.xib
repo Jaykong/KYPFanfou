@@ -91,6 +91,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentsLbl" destination="xzN-Oi-ycc" id="yu5-pB-11y"/>
+                <outlet property="contentsLblHeightConstraint" destination="yrh-PO-6Rc" id="Qho-AN-pgg"/>
                 <outlet property="dateCreatedLbl" destination="u2O-mj-qil" id="5Z0-4b-BOh"/>
                 <outlet property="iconImageView" destination="j1g-uX-q53" id="YCs-TN-dtF"/>
                 <outlet property="imageHeightConstraint" destination="7cD-6x-hoc" id="aEu-D7-MX1"/>

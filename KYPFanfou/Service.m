@@ -5,6 +5,11 @@
 //  Created by trainer on 7/27/16.
 //  Copyright © 2016 trainer. All rights reserved.
 //
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"\n %s:%d   %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],__LINE__, [[[NSString alloc] initWithData:[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] dataUsingEncoding:NSUTF8StringEncoding] encoding:NSNonLossyASCIIStringEncoding] UTF8String]);
+#else
+#define NSLog(...)
+#endif
 
 #import "Service.h"
 #import <TDOAuth/TDOAuth.h>

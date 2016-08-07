@@ -10,5 +10,6 @@ pod 'SDWebImage'
 pod 'JTSImageViewController'
 pod 'DTCoreText'
 pod 'TTTAttributedLabel'
+pod 'JSQMessagesViewController'
 end
 

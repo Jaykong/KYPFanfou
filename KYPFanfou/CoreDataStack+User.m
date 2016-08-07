@@ -8,49 +8,31 @@
 
 #import "CoreDataStack+User.h"
 #import "User.h"
-NSString *const USER_ENTITY = @"User";
-
+#import "CoreDataStack+Common.h"
+#import "EntityNameConstant.h"
 @implementation CoreDataStack (User)
 @dynamic currentUser;
-- (User *)findUniqueEntityWithUniqueID:(NSString *)key value:(id)value {
-    NSFetchRequest *fr = [[NSFetchRequest alloc] initWithEntityName:USER_ENTITY];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@",key,value];
-    fr.predicate = predicate;
-    NSError *error;
-    NSArray *users = [self.context executeFetchRequest:fr error:&error];
-    if (users.count > 0) {
-        return users[0];
-    }
-    return nil;
-}
 
 -(User *)currentUser {
-    User *user = [self findUniqueEntityWithUniqueID:@"isActive" value:@YES];
+    User *user = (User *)[self findUniqueEntityWithUniqueKey:@"isActive" value:@YES entityName:USER_ENTITY];
     return user;
 }
 //根据用户id查找用户数据
 - (User *)findUserWithId:(NSString *)uid {
-    User *user = [self findUniqueEntityWithUniqueID:@"uid" value:uid];
+    User *user = (User *)[self findUniqueEntityWithUniqueKey:@"uid" value:uid entityName:USER_ENTITY];
     return user;
 }
--(User *)checkImportedWithUserID:(NSString *)uid {
-    NSFetchRequest *fr = [[NSFetchRequest alloc] initWithEntityName:USER_ENTITY];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uid like %@",uid];
-    fr.predicate = predicate;
-    NSError *error;
-    NSArray *users = [self.context executeFetchRequest:fr error:&error];
-    if (users.count > 0) {
-        return users[0];
-    }
-    return nil;
-}
+
 //插入或更新用户数据
 -(User *)insertOrUpdateWithUserProfile:(NSDictionary *)userProfile token:(NSString *)token tokenSecret:(NSString *)tokenSecret {
-    
-    User *user =  [self checkImportedWithUserID:userProfile[@"id"]];
+    //检查数据库是否已知有该条数据再插入
+    //数据没有则插入一条数据，有则更新这条数据
+    User *user = (User *)[self findUniqueEntityWithUniqueKey:@"uid" value:userProfile[@"id"] entityName:USER_ENTITY];
     if (!user) {
+    //插入
         user = [NSEntityDescription insertNewObjectForEntityForName:USER_ENTITY inManagedObjectContext:self.context];
     }
+    //更新
     user.name = userProfile[@"name"];
     user.uid = userProfile[@"id"];
     user.iconURL = userProfile[@"profile_image_url"];

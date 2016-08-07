@@ -23,6 +23,7 @@ typedef void (^DidSelectPhotoBlock)(TimelineCell *cell);
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeightConstraint;
 @property (weak, nonatomic) IBOutlet CellToolbar *toolbar;
 @property (weak, nonatomic) CellToolbar *cellToolbar;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentsLblHeightConstraint;
 @property (nonatomic,strong) DidSelectPhotoBlock didSelectPhotoBlock;
 - (void)configureWithStatus:(Status *)status;
 

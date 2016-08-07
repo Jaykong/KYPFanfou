@@ -13,7 +13,7 @@
 @property (nonatomic,strong) User *currentUser;
 
 -(User *)insertOrUpdateWithUserProfile:(NSDictionary *)userProfile token:(NSString *)token tokenSecret:(NSString *)tokenSecret;
--(User *)checkImportedWithUserID:(NSString *)uid;
+
 //根据用户id查找用户数据
 - (User *)findUserWithId:(NSString *)uid;
 @end

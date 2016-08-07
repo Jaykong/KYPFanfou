@@ -38,7 +38,7 @@
     self.contentsLbl.attributedString = attribStr;
     self.contentsLbl.numberOfLines = 0;
     
-    
+    _contentsLblHeightConstraint.constant = [self.contentsLbl intrinsicContentSize].height;
     NSURL *url = [NSURL URLWithString:status.user.iconURL];
     [self.iconImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"BackgroundAvatar"] options:SDWebImageProgressiveDownload];
     

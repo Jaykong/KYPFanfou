@@ -7,7 +7,7 @@
 //
 
 #import "SplashViewController.h"
-
+#import "CoreDataStack+User.h"
 @interface SplashViewController ()
 
 @end
@@ -18,23 +18,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSLog(@"1");
 
     dispatch_async(dispatch_get_main_queue(), ^{
-
-    NSLog(@"2");
-
-        BOOL isUserExist = NO;
-        if (isUserExist) {
+        //根据数据库是否有用户作判断
+        User *user = [CoreDataStack sharedCoreDataStack].currentUser;
+        NSLog(@"%@",user);
+        if (user) {
             [self performSegueWithIdentifier:@"MainSegue" sender:nil];
         } else {
             [self performSegueWithIdentifier:@"LoginSegue" sender:nil];
         }
         
     });
-    NSLog(@"3");
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

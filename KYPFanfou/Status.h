@@ -2,14 +2,14 @@
 //  Status.h
 //  KYPFanfou
 //
-//  Created by trainer on 7/28/16.
+//  Created by JayKong on 8/11/16.
 //  Copyright © 2016 trainer. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class User;
+@class Keyword, Photo, User;
 
 NS_ASSUME_NONNULL_BEGIN
 

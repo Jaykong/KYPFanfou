@@ -12,7 +12,7 @@
 @interface CoreDataStack : NSObject
 
 @property (nonatomic,strong)NSManagedObjectContext *context;
-
+@property (nonatomic,strong) NSPersistentStoreCoordinator *coordinator;
 +(instancetype)sharedCoreDataStack;
 -(void)saveContext;
 @end

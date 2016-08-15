@@ -20,6 +20,16 @@ NSString *const API_FAVORITES_CREATE = @"/favorites/create/";
 NSString *const API_CONVERSATION_LIST = @"/direct_messages/conversation_list.json";
 NSString *const API_CONVERSATION = @"/direct_messages/conversation.json";
 NSString *const API_MESSAGES_NEW = @"/direct_messages/new.json";
+NSString *const API_PHOTOS_TIMELINE = @"/photos/user_timeline.json";
+NSString *const API_UPDATE_PROFILE_IMAGE = @"/account/update_profile_image.json";
+NSString *const API_UPDATE_PROFILE = @"/account/update_profile.json";
+NSString *const API_TRENDS_LIST = @"/trends/list.json";
+NSString *const API_SEARCH_PUBLIC_TIMELINE = @"/search/public_timeline.json";
+NSString *const API_USERS_SHOW = @"/users/show.json";
+NSString *const API_STATUSES_USER_TIMELINE = @"/statuses/user_timeline.json";
+NSString *const API_FRIENDSHIPS_CREATE = @"/friendships/create.json";
+NSString *const API_FRIENDSHIPS_DESTROY = @"/friendships/destroy.json";
+
 
 
 

@@ -9,6 +9,7 @@
 #import "UserTableViewCell.h"
 #import "User.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "CoreDataStack+User.h"
 @implementation UserTableViewCell
 
 - (void)configureWithUser:(User *)user; {
@@ -29,16 +30,28 @@
      如果otherid等于sender的user id，则是别人在发送消息给你
      反之亦然
      */
-    if ([ct.otherid isEqualToString:ct.message.sender.uid]) {
-        self.nameLabel.text = ct.message.sender_screen_name;
-        
-    } else {
-        self.nameLabel.text = ct.message.recipient_screen_name;
-    }
+    //    if ([ct.otherid isEqualToString:ct.message.sender.uid]) {
+    //        self.nameLabel.text = ct.message.sender_screen_name;
+    //        
+    //    } else {
+    //        self.nameLabel.text = ct.message.recipient_screen_name;
+    //    }
+    //
+    //    NSURL *url;
+    //    if ([conversation.otherid isEqualToString:conversation.message.sender.uid]) {
+    //        self.nameLabel.text = conversation.message.sender.name;
+    //        url = [NSURL URLWithString:conversation.message.sender.iconURL];
+    //    } else {
+    //        self.nameLabel.text = conversation.message.recipient.name;
+    //        url = [NSURL URLWithString:conversation.message.recipient.iconURL];
+    //    }
     
+    User *user = [[CoreDataStack sharedCoreDataStack] findUserWithId:ct.otherid];
+    
+    NSURL *url = [NSURL URLWithString:user.iconURL];
+    
+    self.nameLabel.text = user.name;
     self.idLabel.text = ct.otherid;
-    
-    NSURL *url = [NSURL URLWithString:ct.message.recipient.iconURL];
     [self.iconImageView sd_setImageWithURL:url placeholderImage:nil options:SDWebImageRefreshCached];
     
     

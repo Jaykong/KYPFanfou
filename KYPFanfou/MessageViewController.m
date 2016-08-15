@@ -30,7 +30,14 @@
 @implementation MessageViewController
 
 - (void)addTimer {
-   _timer = [[NSTimer alloc] initWithFireDate:[NSDate date] interval:10 target:self selector:@selector(refreshData) userInfo:nil repeats:YES];
+    ///NSRunLoop
+    /**
+     开启一个runloop
+     监听整件
+     网络请求
+     */
+    //  [NSTimer scheduledTimerWithTimeInterval:<#(NSTimeInterval)#> target:<#(nonnull id)#> selector:<#(nonnull SEL)#> userInfo:<#(nullable id)#> repeats:<#(BOOL)#>]
+    _timer = [[NSTimer alloc] initWithFireDate:[NSDate date] interval:10 target:self selector:@selector(refreshData) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
 }
 //初始化数据，请求所有的messages
@@ -39,8 +46,8 @@
         [[CoreDataStack sharedCoreDataStack] addMessagesWithArrayProfile:result];
         _messageList = [[CoreDataStack sharedCoreDataStack] fetchMessagesWithUserID:_userID];
         //  NSLog(@"%@",_messageList);
-        [self.collectionView reloadData];
-        [self scrollToBottomAnimated:YES];
+        //[self.collectionView reloadData];
+        [self finishReceivingMessage];
     }failure:^(NSError *error) {
         
     }];
@@ -57,7 +64,8 @@
     self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor]];
     
     _currentUser = [CoreDataStack sharedCoreDataStack].currentUser;
-    
+    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
+    self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
     [self refreshData];
 }
 - (void)viewWillDisappear:(BOOL)animated {
@@ -110,7 +118,7 @@
 
 - (id<JSQMessageData>)collectionView:(JSQMessagesCollectionView *)collectionView messageDataForItemAtIndexPath:(NSIndexPath *)indexPath {
     Message *mg = [_messageList objectAtIndex:indexPath.item];
-    JSQMessage *jmg = [[JSQMessage alloc] initWithSenderId:self.senderId senderDisplayName:self.senderDisplayName date:mg.created_at text:mg.text];
+    JSQMessage *jmg = [[JSQMessage alloc] initWithSenderId:mg.sender.uid senderDisplayName:mg.sender_screen_name date:mg.created_at text:mg.text];
     return jmg;
     
 }
@@ -121,7 +129,7 @@
 - (id<JSQMessageBubbleImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView messageBubbleImageDataForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     Message *mg = [_messageList objectAtIndex:indexPath.item];
-    if ([mg.sender_id isEqualToString:_currentUser.uid]) {
+    if ([mg.sender.uid isEqualToString:_currentUser.uid]) {
         return self.outgoingBubbleImageData;
     } else {
         return self.incomingBubbleImageData;
@@ -134,8 +142,15 @@
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath {
     Message *mg = [_messageList objectAtIndex:indexPath.item];
+    //    return [[NSAttributedString alloc] initWithString:[mg.created_at defaultDateString]];
+    return [[NSAttributedString alloc] initWithString:mg.sender_screen_name];
+}
+- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath {
+    Message *mg = [_messageList objectAtIndex:indexPath.item];
     return [[NSAttributedString alloc] initWithString:[mg.created_at defaultDateString]];
-    
+}
+- (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath {
+    return 20;
 }
 
 - (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath {
@@ -143,19 +158,25 @@
 }
 
 
-
+//delegate method
 - (void)didPressSendButton:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
+
+    //最近的消息
     Message *mg = [_messageList lastObject];
-    [[Service sharedInstance] postMessageWithUserID:_userID text:text sucess:^(NSArray *result) {
+    //请求new的接口（发送私信的接口)
+    [[Service sharedInstance] postMessageWithUserID:_userID text:text sucess:^(id result) {
+        //插入到数据库Mesage
         [[CoreDataStack sharedCoreDataStack] insertOrUpdateMessageWithProfile:result];
+        //重新获取数据
         _messageList = [[CoreDataStack sharedCoreDataStack] fetchMessagesWithUserID:_userID];
+        //刷新collectionView
         [self.collectionView reloadData];
         [self finishSendingMessageAnimated:YES];
         
     } inReplyID:mg.mid failure:^(NSError *error) {
         
     }];
-   
+    
 }
 
 @end

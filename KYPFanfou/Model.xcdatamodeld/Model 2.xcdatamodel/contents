@@ -6,6 +6,10 @@
         <attribute name="otherid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="message" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Message" syncable="YES"/>
     </entity>
+    <entity name="Keyword" representedClassName="Keyword" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="statuses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Status" inverseName="keyword" inverseEntity="Status" syncable="YES"/>
+    </entity>
     <entity name="Message" representedClassName="Message" syncable="YES">
         <attribute name="created_at" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="mid" optional="YES" attributeType="String" syncable="YES"/>
@@ -29,23 +33,36 @@
         <attribute name="sid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="keyword" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Keyword" inverseName="statuses" inverseEntity="Keyword" syncable="YES"/>
         <relationship name="photo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Photo" inverseName="status" inverseEntity="Photo" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="statuses" inverseEntity="User" syncable="YES"/>
     </entity>
+    <entity name="Trend" representedClassName="Trend" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="query" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="favourites_count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="followers_count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="following" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="friends_count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="iconURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isActive" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="statuses_count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tokenSecret" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="statuses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Status" inverseName="user" inverseEntity="Status" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Photo" positionX="90" positionY="108" width="128" height="105"/>
-        <element name="Status" positionX="-20" positionY="45" width="128" height="150"/>
-        <element name="User" positionX="196" positionY="57" width="128" height="148"/>
         <element name="Conversation" positionX="90" positionY="117" width="128" height="105"/>
+        <element name="Keyword" positionX="117" positionY="189" width="128" height="75"/>
         <element name="Message" positionX="99" positionY="126" width="128" height="180"/>
+        <element name="Photo" positionX="90" positionY="108" width="128" height="105"/>
+        <element name="Status" positionX="-20" positionY="45" width="128" height="165"/>
+        <element name="Trend" positionX="108" positionY="180" width="128" height="90"/>
+        <element name="User" positionX="196" positionY="57" width="128" height="225"/>
     </elements>
 </model>

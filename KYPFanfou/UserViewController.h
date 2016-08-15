@@ -10,4 +10,5 @@
 #import <ARSegmentPager/ARSegmentPageController.h>
 @interface UserViewController :ARSegmentPageController
 
+@property (nonatomic,strong) NSString *userID;
 @end

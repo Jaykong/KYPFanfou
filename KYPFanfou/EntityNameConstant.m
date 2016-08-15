@@ -11,4 +11,6 @@ NSString *const USER_ENTITY = @"User";
 NSString *const STATUS_ENTITY = @"Status";
 NSString *const MESSAGE_ENTITY = @"Message";
 NSString *const CONVERSATION_ENTITY = @"Conversation";
+NSString *const TREND_ENTITY = @"Trend";
+NSString *const KEYWORD_ENTITY = @"Keyword";
 

@@ -1,0 +1,19 @@
+keyword
+随便看看
+
+影响timeline的显示
+1.自建model来做
+2.self.context reset;
+一、需要做本地磁盘缓存
+1.搜索的时候，本地数据
+
+二、不做缓存
+设计要求
+1.接口的返回的东西
+[s1,s2,]
+2.这个数据要区别开于Timeline的status
+方法一：Status表增加一个字段keyword
+    更新方法：删除更新：先删除keyword对应的对象，插入进去
+
+方法二：新增加一张Keyword 包含多个Statues
+    更新表的：

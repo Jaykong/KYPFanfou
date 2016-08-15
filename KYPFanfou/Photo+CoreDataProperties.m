@@ -2,7 +2,7 @@
 //  Photo+CoreDataProperties.m
 //  KYPFanfou
 //
-//  Created by JayKong on 7/31/16.
+//  Created by JayKong on 8/11/16.
 //  Copyright © 2016 trainer. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,8 +14,8 @@
 @implementation Photo (CoreDataProperties)
 
 @dynamic imageurl;
-@dynamic thumburl;
 @dynamic largeurl;
+@dynamic thumburl;
 @dynamic status;
 
 @end

@@ -2,11 +2,12 @@
 //  User.m
 //  KYPFanfou
 //
-//  Created by trainer on 7/26/16.
+//  Created by JayKong on 8/11/16.
 //  Copyright © 2016 trainer. All rights reserved.
 //
 
 #import "User.h"
+#import "Status.h"
 
 @implementation User
 

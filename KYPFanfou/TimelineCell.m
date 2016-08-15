@@ -14,13 +14,21 @@
 #import "DTAttributedLabel.h"
 #import "NSMutableAttributedString+HTML.h"
 #import <DTCoreText.h>
+#import "Photo.h"
 @interface TimelineCell() <DTAttributedTextContentViewDelegate> {
-
+    
 }
 @end
 
 @implementation TimelineCell
 @synthesize cellToolbar;
+- (void)configureFollowingBtn:(BOOL)isfollow {
+    if (isfollow) {
+        [_followBtn setTitle:@"unfollow" forState:UIControlStateNormal];
+    } else {
+        [_followBtn setTitle:@"follow" forState:UIControlStateNormal];
+    }
+}
 - (void)configureWithStatus:(Status *)status; {
     self.nameLabel.text = status.user.name;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -37,6 +45,7 @@
     // NSAttributedString *attribStr = [[NSAttributedString alloc] initWithString:status.text] ;
     self.contentsLbl.attributedString = attribStr;
     self.contentsLbl.numberOfLines = 0;
+    self.contentsLbl.delegate = self;
     
     _contentsLblHeightConstraint.constant = [self.contentsLbl intrinsicContentSize].height;
     NSURL *url = [NSURL URLWithString:status.user.iconURL];
@@ -60,7 +69,7 @@
      1.automask NO，这两个是冲突的
      2.视图的层次关系要加好，也是要加好subviews
      */
-
+    
     //取消Autoresizing的自动约束
     cellToolbar.translatesAutoresizingMaskIntoConstraints = NO;
     [self.toolbar addSubview:cellToolbar];
@@ -75,7 +84,10 @@
     left.active = YES;
     right.active = YES;
 
+    [self configureFollowingBtn:status.user.following];
 }
+
+
 //创建cell tool bar
 - (CellToolbar *)creatCellToolbar {
     //从bundle里面根据xib创建views
@@ -90,5 +102,17 @@
     _didSelectPhotoBlock(self);
     
 }
+#pragma mark - 
+- (UIView *)attributedTextContentView:(DTAttributedTextContentView *)attributedTextContentView viewForLink:(NSURL *)url identifier:(NSString *)identifier frame:(CGRect)frame {
+    DTLinkButton *button = [[DTLinkButton alloc] initWithFrame:frame];
+    button.URL = url;
+    NSLog(@"%@",url);
+    [button addTarget:self action:@selector(touchButtonLink:) forControlEvents:UIControlEventTouchUpInside];
 
+    return button;
+}
+- (void)touchButtonLink:(DTLinkButton *)button {
+    NSLog(@"%s",__func__);
+    [_delegate didTouchupLinkButton:button timelineCell:self];
+}
 @end

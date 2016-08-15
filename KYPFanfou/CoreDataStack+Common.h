@@ -9,6 +9,7 @@
 #import "CoreDataStack.h"
 
 @interface CoreDataStack (Common)
+//查询
 - (NSManagedObject *)findUniqueEntityWithUniqueKey:(NSString *)key value:(id)value entityName:(NSString *)entityName;
 - (NSArray *)fetchObjectsWithUniqueKey:(NSString *)uniqueKey value:(id)value entityName:(NSString *)entityName sortKey:(NSString *)sortKey;
 - (NSDate *)dateFromString:(NSString *)dateStr;

@@ -20,10 +20,12 @@
     [self requestWithPath:API_CONVERSATION parameters:profile requestMethod:@"GET" sucess:sucess failure:failure];
     
 }
-
-- (void)postMessageWithUserID:(NSString *)userID text:(NSString *)text  sucess:(void(^)(NSArray *))sucess inReplyID:(NSString *)inReplyID failure:(void (^)(NSError *error))failure{
+//向服务器pose一条私信向某个用户的
+- (void)postMessageWithUserID:(NSString *)userID text:(NSString *)text  sucess:(void(^)(id result))sucess inReplyID:(NSString *)inReplyID failure:(void (^)(NSError *error))failure{
+    //创建字典：包括需要的参数
     NSDictionary *pf = @{@"user":userID,@"text":text,@"in_reply_to_id":inReplyID};
     NSLog(@"%@",pf);
+    //调用base 2
     [self requestWithPath:API_MESSAGES_NEW parameters:pf requestMethod:@"POST" sucess:sucess failure:failure];
 }
 @end

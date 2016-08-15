@@ -81,6 +81,7 @@
                     </view>
                     <connections>
                         <outlet property="pickerImageView" destination="wMk-zv-cUo" id="LaT-s9-rPd"/>
+                        <outlet property="textView" destination="XoK-we-UrU" id="K9S-4S-cSo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjV-T2-PVd" userLabel="First Responder" sceneMemberID="firstResponder"/>

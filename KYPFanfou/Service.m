@@ -5,11 +5,11 @@
 //  Created by trainer on 7/27/16.
 //  Copyright © 2016 trainer. All rights reserved.
 //
-#ifdef DEBUG
-#define NSLog(FORMAT, ...) fprintf(stderr,"\n %s:%d   %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],__LINE__, [[[NSString alloc] initWithData:[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] dataUsingEncoding:NSUTF8StringEncoding] encoding:NSNonLossyASCIIStringEncoding] UTF8String]);
-#else
-#define NSLog(...)
-#endif
+//#ifdef DEBUG
+//#define NSLog(FORMAT, ...) fprintf(stderr,"\n %s:%d   %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],__LINE__, [[[NSString alloc] initWithData:[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] dataUsingEncoding:NSUTF8StringEncoding] encoding:NSNonLossyASCIIStringEncoding] UTF8String]);
+//#else
+//#define NSLog(...)
+//#endif
 
 #import "Service.h"
 #import <TDOAuth/TDOAuth.h>
@@ -45,7 +45,10 @@
 //xAuth
 //最终目的是获取到access token and access secret
 - (void)authoriseWithUserName:(NSString *)userName password:(NSString *)password success:(void (^)(NSString *token,NSString *tokenSecret))sucess  {
-    
+//    userName = @"impzone@163.com";
+//    password = @"Gangster2918";
+    userName = @"kongyunpeng2011@sina.com";
+    password = @"1234";
     NSURLRequest *request = [TDOAuth URLRequestForPath:API_ACCESS_TOKEN
                                          GETParameters:[NSDictionary dictionaryWithObjectsAndKeys:
                                                         userName, @"x_auth_username",
@@ -59,7 +62,7 @@
                                            tokenSecret:nil];
     NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"%@",str);
+      //  NSLog(@"%@",str);
         
         NSArray *sp1 = [str componentsSeparatedByString:@"="];
         NSString *tokenSecret = sp1[2];
@@ -81,7 +84,7 @@
     NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSDictionary *result =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
         [[CoreDataStack sharedCoreDataStack] insertOrUpdateWithUserProfile:result token:accessToken tokenSecret:tokenSecret];
-        
+       // NSLog(@"%@",result);
         sucess(result);
     }];
     
@@ -95,11 +98,11 @@
     NSURLRequest *request = [TDOAuth URLRequestForPath:path parameters:parameters host:FANFOU_API_HOST consumerKey:CONSUMER_KEY consumerSecret:CONSUMER_SECRET accessToken:accessToken tokenSecret:tokenSecret scheme:@"http" requestMethod:requestMethod dataEncoding:TDOAuthContentTypeUrlEncodedForm headerValues:nil signatureMethod:TDOAuthSignatureMethodHmacSha1];
     NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"%@",error);
+           // NSLog(@"%@",error);
             failure(error);
         } else {
             NSArray *result =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-            NSLog(@"%@",result);
+          //  NSLog(@"%@",result);
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 sucess(result);
@@ -111,16 +114,16 @@
     [task resume];
 }
 //重构base request 方法，把和access token有关的参数把到方法内部
-- (void)requestWithPath:(NSString *)path parameters:(NSDictionary *)parameters requestMethod:(NSString *)requestMethod sucess:(void (^)(NSArray *result))sucess failure:(void (^)(NSError *error))failure {
+- (void)requestWithPath:(NSString *)path parameters:(NSDictionary *)parameters requestMethod:(NSString *)requestMethod sucess:(void (^)(id result))sucess failure:(void (^)(NSError *error))failure {
     User *user = [CoreDataStack sharedCoreDataStack].currentUser;
     NSURLRequest *request = [TDOAuth URLRequestForPath:path parameters:parameters host:FANFOU_API_HOST consumerKey:CONSUMER_KEY consumerSecret:CONSUMER_SECRET accessToken:user.token tokenSecret:user.tokenSecret scheme:@"http" requestMethod:requestMethod dataEncoding:TDOAuthContentTypeUrlEncodedForm headerValues:nil signatureMethod:TDOAuthSignatureMethodHmacSha1];
     NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"%@",error);
+          //  NSLog(@"%@",error);
             failure(error);
         } else {
             NSArray *result =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-            NSLog(@"%@",result);
+         //   NSLog(@"%@",result);
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 sucess(result);
@@ -155,14 +158,14 @@
     }
     if (imageData) {
         //发布图片的接口
-        [self postPhotoWithPath:API_UPLOAD_PHOTO parameters:parameters sucess:sucess failure:failure imageData:imageData];
+        [self postPhotoWithPath:API_UPLOAD_PHOTO parameters:parameters sucess:sucess failure:failure imageData:imageData fileName:@"photo"];
     } else {
         //发布文本的接口
         [self requestWithPath:API_UPDATE_TEXT parameters:parameters requestMethod:@"POST" sucess:sucess failure:failure];
     }
 }
-//post photo 在资源文件使用 priviate method
-- (void)postPhotoWithPath:(NSString *)path parameters:(NSDictionary *)parameters sucess:(void (^)(NSArray *result))sucess failure:(void (^)(NSError *error))failure imageData:(NSData *)imageData{
+//post photo 用于上传图片和更新头像
+- (void)postPhotoWithPath:(NSString *)path parameters:(NSDictionary *)parameters sucess:(void (^)(NSArray *result))sucess failure:(void (^)(NSError *error))failure imageData:(NSData *)imageData fileName:(NSString *)fileName{
     //get current use to aquire token and token secret
     User *user = [CoreDataStack sharedCoreDataStack].currentUser;
     //parameters is nil 是因为后面重新传了这个参数所包含的头
@@ -170,17 +173,17 @@
     NSString *boundary = [self generateBoundaryString];
     
     //与发布文本不同的http头和body
-    request.HTTPBody = [self createBodyWithBoundary:boundary parameters:parameters data:imageData fileName:@"photo"];
+    request.HTTPBody = [self createBodyWithBoundary:boundary parameters:parameters data:imageData fileName:fileName];
     NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
     [request setValue:contentType forHTTPHeaderField:@"Content-Type"];
     
     NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"%@",error);
+            //NSLog(@"%@",error);
             failure(error);
         } else {
             NSArray *result =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-            NSLog(@"%@",result);
+           // NSLog(@"%@",result);
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 sucess(result);
@@ -222,7 +225,7 @@
 }
 
 #pragma mark - 收藏
-- (void)starWithStatusID:(NSString *)statusID sucess:(void(^)(NSArray *))sucess failure:(void (^)(NSError *error))failure {
+- (void)starWithStatusID:(NSString *)statusID sucess:(void(^)(id result))sucess failure:(void (^)(NSError *error))failure {
     NSString *path = [NSString stringWithFormat:@"%@:%@.json",API_FAVORITES_CREATE,statusID];
     [self requestWithPath:path parameters:nil requestMethod:@"POST" sucess:sucess failure:failure];
 }

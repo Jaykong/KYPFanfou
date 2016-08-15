@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.m
 //  KYPFanfou
 //
-//  Created by JayKong on 7/31/16.
+//  Created by trainer on 8/12/16.
 //  Copyright © 2016 trainer. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,12 +13,17 @@
 
 @implementation User (CoreDataProperties)
 
+@dynamic favourites_count;
+@dynamic followers_count;
+@dynamic friends_count;
 @dynamic iconURL;
 @dynamic isActive;
 @dynamic name;
+@dynamic statuses_count;
 @dynamic token;
 @dynamic tokenSecret;
 @dynamic uid;
+@dynamic following;
 @dynamic statuses;
 
 @end

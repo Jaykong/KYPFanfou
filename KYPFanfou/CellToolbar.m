@@ -9,15 +9,17 @@
 #import "CellToolbar.h"
 
 @implementation CellToolbar
+//回复
 - (IBAction)reply:(id)sender forEvent:(UIEvent *)event {
+    [_delegate replyWithCellToolbar:self sender:sender forEvent:event];
 }
 
 - (IBAction)star:(id)sender forEvent:(UIEvent *)event {
     [_delegate starWithCellToolbar:self sender:sender forEvent:event];
 }
-
+//repost
 - (IBAction)repost:(id)sender forEvent:(UIEvent *)event {
-    
+    [_delegate repostWithCellToolbar:self sender:sender forEvent:event];
 }
 
 - (void)setupStarButtonWithBool:(Boolean)favorited {

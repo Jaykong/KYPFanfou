@@ -10,7 +10,7 @@
 
 @interface CoreDataStack ()
 @property (nonatomic,strong) NSManagedObjectModel *model;
-@property (nonatomic,strong) NSPersistentStoreCoordinator *coordinator;
+
 
 @end
 

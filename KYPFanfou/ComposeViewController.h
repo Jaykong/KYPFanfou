@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ComposeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (nonatomic,strong) IBOutlet UIImageView *pickerImageView;
+@property (nonatomic,strong) NSString *placeHolder;
+@property (nonatomic,strong) NSAttributedString *attriPlaceHolder;
 @end

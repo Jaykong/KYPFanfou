@@ -46,7 +46,7 @@
 }
 - (IBAction)postContent:(id)sender {
     NSData *data = UIImageJPEGRepresentation(_pickerImageView.image, 0.5);
-    [[Service sharedInstance] postData:@"345" imageData:data replyToStatusID:nil repostStatusID:nil sucess:^(NSArray *result) {
+    [[Service sharedInstance] postData:_textView.text imageData:data replyToStatusID:nil repostStatusID:nil sucess:^(NSArray *result) {
         NSLog(@"%@",result);
         
     } failure:^(NSError *error) {
@@ -56,6 +56,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+   // _textView.text = _placeHolder;
+    _textView.attributedText = _attriPlaceHolder;
     // Do any additional setup after loading the view.
 }
 

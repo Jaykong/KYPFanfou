@@ -11,10 +11,19 @@
 @class CellToolbar;
 @class TimelineCell;
 @class DTAttributedLabel;
+@class DTLinkButton;
 typedef void (^DidSelectPhotoBlock)(TimelineCell *cell);
+
+@protocol TimelineCellDelegate <NSObject>
+//when link button is pressed
+//当点击文字链接时
+- (void)didTouchupLinkButton:(DTLinkButton *)button timelineCell:(TimelineCell *)timelineCell;
+
+@end
 
 @interface TimelineCell : UITableViewCell
 
+@property (nonatomic,weak) id<TimelineCellDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateCreatedLbl;
@@ -24,6 +33,7 @@ typedef void (^DidSelectPhotoBlock)(TimelineCell *cell);
 @property (weak, nonatomic) IBOutlet CellToolbar *toolbar;
 @property (weak, nonatomic) CellToolbar *cellToolbar;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentsLblHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIButton *followBtn;
 @property (nonatomic,strong) DidSelectPhotoBlock didSelectPhotoBlock;
 - (void)configureWithStatus:(Status *)status;
 

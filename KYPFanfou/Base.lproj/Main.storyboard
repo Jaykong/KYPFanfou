@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="214.5" y="732"/>
         </scene>
-        <!--MentionMe-->
+        <!--Discover-->
         <scene sceneID="Yi0-zU-7Rt">
             <objects>
-                <viewControllerPlaceholder storyboardName="MentionMe" id="w4j-pF-VHb" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Discover" id="w4j-pF-VHb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="提及我的" id="DJi-5J-dkx" userLabel="提及我的"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJw-Jf-h9F" userLabel="First Responder" sceneMemberID="firstResponder"/>

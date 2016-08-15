@@ -2,7 +2,7 @@
 //  Message.m
 //  KYPFanfou
 //
-//  Created by trainer on 8/5/16.
+//  Created by JayKong on 8/11/16.
 //  Copyright © 2016 trainer. All rights reserved.
 //
 

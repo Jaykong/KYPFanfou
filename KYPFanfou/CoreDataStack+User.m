@@ -29,13 +29,24 @@
     //数据没有则插入一条数据，有则更新这条数据
     User *user = (User *)[self findUniqueEntityWithUniqueKey:@"uid" value:userProfile[@"id"] entityName:USER_ENTITY];
     if (!user) {
-    //插入
+        //插入
         user = [NSEntityDescription insertNewObjectForEntityForName:USER_ENTITY inManagedObjectContext:self.context];
     }
     //更新
     user.name = userProfile[@"name"];
     user.uid = userProfile[@"id"];
     user.iconURL = userProfile[@"profile_image_url"];
+    NSString *followers_count = userProfile[@"followers_count"];
+    NSString *friends_count = userProfile[@"friends_count"];
+    NSString *favourites_count = userProfile[@"favourites_count"];
+    NSString *statuses_count = userProfile[@"statuses_count"];
+    NSString *following = userProfile[@"following"];
+
+    user.followers_count = @(followers_count.integerValue);
+    user.friends_count = @(friends_count.integerValue);
+    user.favourites_count = @(favourites_count.integerValue);
+    user.statuses_count = @(statuses_count.integerValue);
+    user.following = @(following.boolValue);
     //请求home time api
     //1. status 插入
     //2. user 插入
@@ -47,6 +58,7 @@
     }
     // NSLog(@"%@",user.token);
     // NSLog(@"%@",user.tokenSecret);
+    [self saveContext];
     return user;
 }
 
